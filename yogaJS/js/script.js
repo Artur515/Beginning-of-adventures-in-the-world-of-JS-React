@@ -37,12 +37,13 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   //TIMER JS create the timer to deadline
-  let deadline = "2020-10-15";
+  let deadline = "2020-10-17";
 
   function getTimeRemaining(endTime) {
     let t = Date.parse(endTime) - Date.parse(new Date()); //parse превращает любую дату в кол-во миллисекунд
     //мы взяли дату deadline (она когда-то будет) и отняли дату  когда пользователь зашел на сайт
     //и в t лежит кол-во миллисекунд
+    console.log(getDate());
     let seconds = Math.floor((t / 1000) % 60);
     let minutes = Math.floor((t / 1000 / 60) % 60);
     let hours = Math.floor(t / (1000 * 60 * 60));
@@ -83,4 +84,23 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
   setClock("timer", deadline);
+
+  //Model window
+
+  let more = document.querySelector(".more"); //создаем переменнные
+  let overlay = document.querySelector(".overlay");
+  let close = document.querySelector(".popup-close");
+
+  more.addEventListener("click", function () {
+    // слушаем и обращаемся к стилям (уже созданным в css)
+    overlay.style.display = "block"; //при клике вызываем модальное окно
+    this.classList.add("more-splash");
+    //если закзчик не хочет чтобы страница двигалась при открытом модальном окне
+    document.body.style.overflow = "hidden";
+  });
+  close.addEventListener("click", function () {
+    overlay.style.display = "none"; //при клике на крестик закрываем окно , но только ужене через this
+    more.classList.remove("more-splash");
+    document.body.style.overflow = "";
+  });
 });
