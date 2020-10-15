@@ -43,7 +43,6 @@ window.addEventListener("DOMContentLoaded", function () {
     let t = Date.parse(endTime) - Date.parse(new Date()); //parse превращает любую дату в кол-во миллисекунд
     //мы взяли дату deadline (она когда-то будет) и отняли дату  когда пользователь зашел на сайт
     //и в t лежит кол-во миллисекунд
-    console.log(getDate());
     let seconds = Math.floor((t / 1000) % 60);
     let minutes = Math.floor((t / 1000 / 60) % 60);
     let hours = Math.floor(t / (1000 * 60 * 60));
