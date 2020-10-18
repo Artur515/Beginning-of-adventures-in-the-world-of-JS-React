@@ -149,4 +149,86 @@ window.addEventListener("DOMContentLoaded", function () {
       input[i].value = "";
     }
   });
+  //slider
+  let slideIndex = 1; //параметр текущего слайда// count
+  let slides = document.querySelectorAll(".slider-item"),
+    prev = document.querySelector(".prev"),
+    next = document.querySelector(".next"),
+    dotsWrap = document.querySelector(".slider-dots"),
+    dots = document.querySelectorAll(".dot");
+
+  function showSlides(n) {
+    if (n > slides.length) {
+      slideIndex = 1; //чтобы после последней картинки переключалась на первую
+    }
+    if (n < 1) {
+      slideIndex = slides.length; //если с первой то на последнюю
+    }
+    slides.forEach((item) => (item.style.display = "none")); //этот способ лучше более современно
+    // for (let i = 0; i < slides.length; i++) {
+    //   slides[i].style.display = "none";
+    // } // но можно и так
+    dots.forEach((item) => item.classList.remove("dot-active"));
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("dot-active");
+  }
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
+  prev.addEventListener("click", function () {
+    plusSlides(-1);
+  });
+  next.addEventListener("click", function () {
+    plusSlides(1);
+  });
+  dotsWrap.addEventListener("click", function (event) {
+    for (let i = 0; i < dots.length + 1; i++) {
+      if (
+        event.target.classList.contains("dot") &&
+        event.target == dots[i - 1]
+      ) {
+        currentSlide(i);
+      }
+    }
+  });
+  //calculator
+  let persons = document.querySelectorAll(".counter-block-input")[0],
+    restdays = document.querySelectorAll(".counter-block-input")[1],
+    place = document.querySelector("#select"),
+    totalValue = document.querySelector("#total"),
+    personsSum = 0,
+    daysSum = 0,
+    total = 0;
+  totalValue.textContent = 0;
+
+  persons.addEventListener("change", function () {
+    personsSum = +this.value;
+    total = (daysSum + personsSum) * 4000;
+    if (restdays.value == "") {
+      totalValue.innerHTML = 0;
+    } else {
+      totalValue.innerHTML = total;
+    }
+  });
+
+  restdays.addEventListener("change", function () {
+    daysSum = +this.value;
+    total = (daysSum + personsSum) * 4000;
+    if (persons.value == "") {
+      totalValue.innerHTML = 0;
+    } else {
+      totalValue.innerHTML = total;
+    }
+  });
+  place.addEventListener("change", function () {
+    if (restdays.value == "" || persons.value == "") {
+      totalValue.innerHTML = 0;
+    } else {
+      let a = total; //техническая переменная избавляет от постоянного умножения total
+      totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+    }
+  });
 });
