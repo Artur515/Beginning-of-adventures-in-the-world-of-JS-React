@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="menuStyle.css" />
+        <title>Pizza Store</title>
+    </head>
+    <body>
+        <div class="main">
+            <span
+                class="span_filter"
+                style="font-size: 30px; cursor: pointer; color: rgb(12, 12, 12)"
+                onclick="openNav()"
+                >Filter</span
+            >
+            <img src="Images/pizza-logo.png" alt="logo" class="logo" />
+            <div id="carusel"></div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <h4>Price</h4>
+                <p>from</p>
+                <input type="text" name="" id="price from" />
+                <p>to</p>
+                <input type="text" name="" id="price to" />
+                <div class="btn_search">
+                    <input class="btn" type="button" value="Search Calorisity" />
+                    <input class="btn" type="button" value="Search Price" />
+                    <input class="btn" type="button" value="Reset" />
+                    <hr />
+                    <input class="btn" class="collect" type="button" value="Collect your pizza" />
+                </div>
+            </div>
+        </div>
+        <div class="search_main">
+            <select class="select">
+                <option value="up">По возрастанию</option>
+                <option value="down">От убыванию</option>
+                <option value="max_cal">Caloricity Up</option>
+                <option value="min_cal">Caloricity Down</option>
+                <option value="default">По умолчанию</option>
+            </select>
+
+            <input type="text" id="search" placeholder="Search..." />
+
+            <div class="buy">
+                <a href="#"><img src="/Images/pngwing.com.png" width="25%" />Корзина</a>
+            </div>
+        </div>
+        <div class="wrapper">
+            <main class="container"></main>
+        </div>
+        <script src="btn.js"></script>
+        <script src="main.js" type="module"></script>
+    </body>
+</html>
