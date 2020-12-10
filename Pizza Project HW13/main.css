@@ -9,7 +9,6 @@ body,
 
 .wrapper {
     width: 1200px;
-    display: flex;
 }
 .logo {
     width: 10%;
@@ -19,7 +18,7 @@ body,
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     padding: 5px;
 }
 
@@ -70,23 +69,10 @@ body,
     display: flex;
     flex-direction: column;
 }
-#carusel {
-    width: 175px;
-    position: absolute;
-    top: 250px;
-}
-.bunner_cart {
-    text-align: center;
-    font-size: 14px;
-    border: 1px solid black;
-}
-.bunner_cart img {
-    width: 150px;
-}
 .card {
     margin: 15px 10px 15px 10px;
     padding: 10px;
-    width: 235px;
+    width: 240px;
     border-radius: 35px;
     text-align: center;
     display: flex;
@@ -99,9 +85,8 @@ body,
 .card:hover {
     transform: scale(1.1);
 }
-
 .card button {
-    background: rgb(101, 5, 131);
+    background: rgb(82, 0, 107);
     color: rgb(201, 200, 200);
     width: 75px;
     height: 28px;
@@ -122,4 +107,7 @@ body,
     border: 1px solid black;
     display: flex;
     flex-direction: row;
+}
+.btn {
+    margin: 10px;
 }

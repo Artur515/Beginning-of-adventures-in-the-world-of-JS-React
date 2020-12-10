@@ -108,24 +108,3 @@ document.getElementById("search").oninput = searchComposition;
 //     }
 // }
 // initFavorite();
-
-// priceOfDay
-let bannerOfPizzas = () => {
-    let bunnerCart = document.createElement("div");
-    bunnerCart.className = "bunner_cart";
-    let carusel = document.querySelector("#carusel");
-
-    let result = pizzaList.forEach((pizza) => {
-        if (pizza.priceOfTheDay) {
-            console.log(pizza);
-            bunnerCart.innerHTML = `
-            <img src="${pizza.img}" alt="picture">
-                <h2>Название: ${pizza.name}</h2>
-                <p>Цена: ${pizza.price}</p>
-            `;
-        }
-    });
-    carusel.appendChild(bunnerCart);
-};
-
-bannerOfPizzas();

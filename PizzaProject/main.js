@@ -11,13 +11,14 @@ const renderCard = (item) => {
         basketArr.push(item);
         console.log(basketArr);
     };
-    card.innerHTML = `<p class="favor" >&#9825</p>
+    card.innerHTML = `<span>♡</span>
         <img src="${item.img}" alt="picture">
         <h2>Название: ${item.name}</h2>
         <p>Цена: ${item.price}</p>
         <p>Каллории: ${item.caloricity}</p>
     `;
     card.appendChild(button);
+
     return card;
 };
 
@@ -68,14 +69,7 @@ let select = () => {
     });
 };
 select();
-//Basket Array
-// let basketBuy = document.querySelector(".buy");
-// basketBuy.addEventListener("click", () => {
-//     const basketCard = document.createElement("div");
-//     basketCard.className = "basket";
-//     document.querySelector(".container").innerHTML = "";
-//     return renderCards(basketArr);
-// });
+
 //////
 
 const searchComposition = () => {
@@ -92,30 +86,67 @@ const searchComposition = () => {
 
 document.getElementById("search").oninput = searchComposition;
 
-// btnFilterOfPizza();
-// btnFilterOfPizza();
-///is Favorite
-// function initFavorite() {
-//     let items = document.getElementsByClassName("favor");
-//     for (let i = 0; i < items.length; i++) {
-//         let item = items[i];
-//         console.log(item);
-//         pizzaList.forEach((pizza) => {
-//             item.addEventListener("click", function () {
-//                 item.style.background = "red";
-//             });
-//         });
-//     }
-// }
-// initFavorite();
+///filter
 
-// priceOfDay
+// let filterBtn = document.querySelectorAll('.btn');
+// let valueFrom = document.getElementById('price from')
+// filterBtn[0].onclick = function () {
+//     console.log(valueFrom.value);
+// }
+
+const filterPriceCaloricity = () => {
+    let filterBtn = document.querySelectorAll(".btn");
+    let valueFrom = document.getElementById("price from");
+    let valueTo = document.getElementById("price to");
+    filterBtn[1].onclick = function () {
+        let result = pizzaList.filter((pizza) => {
+            if (valueFrom.value == "" && valueTo.value == "") {
+                return pizza;
+            }
+            if (valueFrom.value == "" && valueTo.value != "") {
+                return pizza.price < valueTo.value;
+            }
+            if (valueFrom.value != "" && valueTo.value == "") {
+                return pizza.price > valueFrom.value;
+            }
+            if (pizza.price >= valueFrom.value && pizza.price <= valueTo.value) {
+                return pizza;
+            }
+        });
+        renderCards(result);
+    };
+
+    filterBtn[0].onclick = function () {
+        let result = pizzaList.filter((pizza) => {
+            if (valueFrom.value == "" && valueTo.value == "") {
+                return pizza;
+            }
+            if (valueFrom.value == "" && valueTo.value != "") {
+                return pizza.caloricity < valueTo.value;
+            }
+            if (valueFrom.value != "" && valueTo.value == "") {
+                return pizza.caloricity > valueFrom.value;
+            }
+            if (pizza.caloricity >= valueFrom.value && pizza.caloricity <= valueTo.value) {
+                return pizza;
+            }
+        });
+        renderCards(result);
+    };
+    //наверное будет правильно добавить еще проверку на ввод символов и букв
+    filterBtn[2].onclick = function () {
+        (valueFrom.value = ""), (valueTo.value = "");
+    };
+};
+
+filterPriceCaloricity();
+
+//priceOfTheDay
 let bannerOfPizzas = () => {
     let bunnerCart = document.createElement("div");
     bunnerCart.className = "bunner_cart";
     let carusel = document.querySelector("#carusel");
-
-    let result = pizzaList.forEach((pizza) => {
+    let bunnerPizza = pizzaList.filter((pizza) => {
         if (pizza.priceOfTheDay) {
             console.log(pizza);
             bunnerCart.innerHTML = `
@@ -124,8 +155,17 @@ let bannerOfPizzas = () => {
                 <p>Цена: ${pizza.price}</p>
             `;
         }
+        carusel.appendChild(bunnerCart);
     });
-    carusel.appendChild(bunnerCart);
 };
 
 bannerOfPizzas();
+
+//Basket Array
+// let basketBuy = document.querySelector(".buy");
+// basketBuy.addEventListener("click", () => {
+//     const basketCard = document.createElement("div");
+//     basketCard.className = "basket";
+//     document.querySelector(".container").innerHTML = "";
+//     return renderCards(basketArr);
+// });
