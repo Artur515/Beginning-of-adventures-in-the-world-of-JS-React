@@ -10,7 +10,9 @@ html {
     background: #f9f9f9;
     color: #111;
 }
-
+.h1 {
+    margin: 5px auto;
+}
 .wrapper {
     width: 100%;
     height: 100%;
@@ -23,26 +25,30 @@ html {
     text-align: center;
 }
 
-.quiz-frame {
+.test-frame {
     border: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.quiz__head {
+.test__head {
     font-size: 20pt;
     margin: 10px;
     margin-bottom: 50px;
 }
 
 .head__content {
-    padding: 5px;
+    font-size: 35px;
+    font-weight: 700;
+    padding: 50px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
 }
 
-.quiz__body {
+.test__body {
     margin: 10px;
 }
 
-.quiz__footer {
+.test__footer {
     position: absolute;
     bottom: 0;
     display: block;
@@ -57,22 +63,22 @@ html {
 .button {
     border: 0;
     border-radius: 10px;
-    background: #6477eb;
+    background: #2c2c2c;
     color: #fff;
     padding: 10px 25px;
-    width: 70%;
+    width: 40%;
     font-size: 15pt;
     display: block;
-    margin: 2px auto;
+    margin: 10px auto;
     cursor: pointer;
 }
 
 .button_wrong {
-    background: #eb6465;
+    background: #d40000;
 }
 
 .button_correct {
-    background: #5eb97d;
+    background: hsl(140, 100%, 19%);
 }
 
 .button_passive {

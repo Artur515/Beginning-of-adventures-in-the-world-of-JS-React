@@ -1,0 +1,9 @@
+.content {
+    display: flex;
+}
+.user_cart {
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 15px;
+}
