@@ -170,13 +170,18 @@ let bannerOfPizzas = () => {
                 <h2>Название: ${pizza.name}</h2>
                 <p>Цена: ${pizza.price}</p>
             `;
-
-            carusel.appendChild(bunnerCart)
-
         }
-
+        carusel.appendChild(bunnerCart);
     });
-
 };
 
 bannerOfPizzas();
+
+//Basket Array
+// let basketBuy = document.querySelector(".buy");
+// basketBuy.addEventListener("click", () => {
+//     const basketCard = document.createElement("div");
+//     basketCard.className = "basket";
+//     document.querySelector(".container").innerHTML = "";
+//     return renderCards(basketArr);
+// });
