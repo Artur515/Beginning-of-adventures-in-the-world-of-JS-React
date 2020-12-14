@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const ContentUser = (props) => {
     const handleUserDelete = (id) => {
         props.deleteUser(id);

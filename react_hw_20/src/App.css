@@ -12,10 +12,14 @@
     border: 1px solid black;
     grid-area: form;
     box-sizing: border-box;
+    max-height: 300px;
 }
 .content {
     border: 1px solid black;
     grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .footer {
     margin-top: 15px;

@@ -23,7 +23,7 @@ const App = () => {
             <FormUser createUser={createUser} />
             <ContentUser users={users} deleteUser={deleteUser} />
             <Footer users={users} />
-            <SearchInput className="search" />
+            <SearchInput className="search" users={users} />
         </div>
     );
 };
