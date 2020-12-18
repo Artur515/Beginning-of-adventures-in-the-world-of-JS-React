@@ -6,12 +6,22 @@ import ContentUser from "./components/ContentUser";
 import Footer from "./components/FooterCount";
 import SearchInput from "./components/SearchInput";
 
+const userArr = [];
+
 const App = () => {
-    const userArr = [];
     const [users, setUsers] = useState(userArr);
     const createUser = (user) => {
         user.id = users.length + 1;
-        setUsers([...users, user]);
+        userArr.push(user);
+        setUsers([...userArr]);
+    };
+    const handleSearch = (event) => {
+        const { value } = event.target;
+        let result = userArr.filter((user) => {
+            return user.name.toLowerCase().includes(value.toLowerCase());
+        });
+        setUsers(result);
+        console.log(result);
     };
 
     const deleteUser = (id) => {
@@ -23,7 +33,7 @@ const App = () => {
             <FormUser createUser={createUser} />
             <ContentUser users={users} deleteUser={deleteUser} />
             <Footer users={users} />
-            <SearchInput className="search" users={users} />
+            <SearchInput className="search" handleSearch={handleSearch} />
         </div>
     );
 };
