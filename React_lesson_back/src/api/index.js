@@ -8,7 +8,7 @@ class Fetch {
         this.api.interceptors.request.use(
             function (config) {
                 // Do something before request is sent
-                console.log(config);
+
                 config.headers = {
                     "Content-Type": "application/json",
                     Authorization: localStorage.getItem("token"),
@@ -28,6 +28,9 @@ class Fetch {
     }
     login(body) {
         return this.api.post("/auth/login", body);
+    }
+    getCurrentUser() {
+        return this.api.get("/users/current");
     }
     getUsers() {
         return this.api.get("/users");

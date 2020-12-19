@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import api from "../api";
 
 const Registration = () => {
@@ -26,7 +26,7 @@ const Registration = () => {
     );
 };
 
-const Login = ({ setIsAuth }) => {
+const Login = ({ dispatch }) => {
     const handleLogin = (e) => {
         e.preventDefault();
         const { login, password, email } = e.target.elements;
@@ -38,7 +38,7 @@ const Login = ({ setIsAuth }) => {
             .then((res) => {
                 const { access_token } = res.data;
                 localStorage.setItem("token", access_token);
-                setIsAuth(true);
+                dispatch({ type: "LOGIN", payload: access_token });
             })
             .catch((e) => console.log(e));
     };
@@ -51,14 +51,14 @@ const Login = ({ setIsAuth }) => {
     );
 };
 
-const Auth = ({ setIsAuth }) => {
+const Auth = ({ dispatch }) => {
     const [isLogin, setIsLogin] = useState(true);
     return (
         <div>
             <button onClick={() => setIsLogin(!isLogin)}>
                 {isLogin ? "Get Registration" : "Get Login"}
             </button>
-            {!isLogin ? <Registration /> : <Login setIsAuth={setIsAuth} />}
+            {!isLogin ? <Registration /> : <Login dispatch={dispatch} />}
         </div>
     );
 };

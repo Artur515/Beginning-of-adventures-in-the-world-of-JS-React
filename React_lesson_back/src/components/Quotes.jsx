@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import api from "../api";
+import { GlobalContext } from "../App";
 
-const Quotes = () => {
-    const handleGetUsers = () => {
-        api.getUsers()
-            .then((res) => {
-                console.log(res.data);
-            })
-            .catch((e) => {
-                console.log(e);
-            });
-    };
-    return <button onClick={handleGetUsers}>get users</button>;
+const Quotes = ({ dispatch }) => {
+    const context = useContext(GlobalContext);
+    useEffect(() => {
+        api.getUsers().then((res) => {
+            context.dispatch({ type: "GET_USERS", payload: res.data });
+        });
+    }, []);
+
+    console.log(context);
+
+    return <div>Quotes</div>;
 };
 
 export default Quotes;

@@ -20,6 +20,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    box-sizing: border-box;
+    padding: 5px;
 }
 .footer {
     margin-top: 15px;
