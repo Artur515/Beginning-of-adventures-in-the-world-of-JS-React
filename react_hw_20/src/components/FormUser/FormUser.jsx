@@ -18,17 +18,7 @@ const FormUser = (props) => {
         props.createUser(user);
         setUser(formState);
     };
-    // if (user != []) {
-    //     const handleSearchFilms = (event) => {
-    //         const { value } = event.target;
-    //         const result = userData.filter((user) => {
-    //             return user.name
-    //                 .toLocaleLowerCase()
-    //                 .includes(value.toLocaleLowerCase());
-    //         });
-    //         setUsers(result);
-    //     };
-    // }
+   
     return (
         <form className="form_user" onSubmit={handleSubmit}>
             <input

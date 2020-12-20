@@ -1,7 +1,6 @@
 import React from "react";
 
 const Footer = (props) => {
-    console.log(props);
     return (
         <div className="footer">
             <h1>Total users count:{props.users.length}</h1>

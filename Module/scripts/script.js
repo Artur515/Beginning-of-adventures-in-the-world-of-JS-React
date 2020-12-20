@@ -1,4 +1,4 @@
-const h = document.getElementsByClassName("h1");
+
 const headElem = document.getElementById("head");
 const buttonsElem = document.getElementById("buttons");
 const pagesElem = document.getElementById("pages");
@@ -234,7 +234,7 @@ function Click(index) {
         }
 
         if (index != correct) {
-            h.innerHTML = "ok";
+           
             btns[index].className = "button button_wrong";
         }
     } else {
