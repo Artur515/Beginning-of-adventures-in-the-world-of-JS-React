@@ -14,9 +14,8 @@ const App = () => {
     const [users, setUsers] = useState(chooseArr);
 
     const createUser = (user) => {
-        user.id = users.length + 1;
+        user.id = Math.floor(Math.random() * 1000);
         userArr.push(user);
-        setUsers([...userArr]);
         localStorage.setItem("users", JSON.stringify([...userArr]));
         setUsers(JSON.parse(localStorage.getItem("users")));
     };
@@ -29,11 +28,13 @@ const App = () => {
         });
         setUsers(result);
     };
-
     const deleteUser = (id) => {
-        setUsers(users.filter((user) => user.id !== id));
+        localStorage.setItem(
+            "users",
+            JSON.stringify(users.filter((user) => user.id !== id))
+        );
+        console.log(JSON.parse(localStorage.getItem("users")));
     };
-
     return (
         <div className="App">
             <FormUser createUser={createUser} />
