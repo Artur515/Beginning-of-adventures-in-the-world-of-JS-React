@@ -8,7 +8,7 @@ const ContentUser = (props) => {
     return (
         <div className="content">
             {props.users.map((user) => (
-                <div className="user_cart">
+                <div className="user_cart" key={user.id}>
                     <h4>{user.name}</h4>
                     <h4>{user.surname}</h4>
                     <h4>{user.address}</h4>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <meta charset="utf-8" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="styles/style.css"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="HandheldFriendly" content="true" />
+    </head>
+    <body>
+        <div class="change_test">
+            <h1>Change your test</h1>
+            <button id="bmw">Test BMW</button>
+            <button id="create_test">Create your test</button>
+        </div>
+        <div class="wrapper">
+            <main class="main">
+                <div class="test__head">
+                    <div class="head__content" id="head">
+                        More questions
+                    </div>
+                </div>
+                <div class="test__body">
+                    <div class="buttons">
+                        <div class="buttons__content" id="buttons">
+                            <button class="button"></button><br />
+                            <button
+                                class="button button_wrong"
+                            ></button
+                            ><br />
+                            <button
+                                class="button button_correct"
+                            ></button
+                            ><br />
+                            <button
+                                class="button button_passive"
+                            ></button
+                            ><br />
+                        </div>
+                    </div>
+
+                    <div class="test__footer">
+                        <div class="footer__content" id="pages">
+                            0 / 0
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="your_test_wrapper">
+            <h4>Создадим тест</h4>
+            <input
+                type="text"
+                class="question"
+                placeholder="Введите ваш вопрос"
+                class="hide"
+            />
+            <button class="btn" class="hide">click</button>
+        </div>
+        <script type="module" src="scripts/script.js"></script>
+        <script type="module" src="scripts/yourTest.js"></script>
+    </body>
+</html>
