@@ -12,6 +12,8 @@ export const yourTest = () => {
     const buttonsElem = document.getElementById("buttons");
     const pagesElem = document.getElementById("pages");
     const your_wrapper = document.querySelector("#your_test_wrapper");
+    const questionCount = document.querySelector(".question-count");
+
     const questions = [];
 
     class Question {
@@ -32,14 +34,19 @@ export const yourTest = () => {
 
     btn.onclick = () => {
         questions.push(
-            new Question(inputQuestion.value, [
-                new Answer(true_answer[0].value, 1),
-                new Answer(true_answer[1].value, 0),
-                new Answer(true_answer[2].value, 0),
-                new Answer(true_answer[3].value, 0),
-            ])
+            new Question(
+                inputQuestion.value,
+                [
+                    new Answer(true_answer[0].value, 1),
+                    new Answer(true_answer[1].value, 0),
+                    new Answer(true_answer[2].value, 0),
+                    new Answer(true_answer[3].value, 0),
+                ].sort(() => Math.random() - 0.5)
+            )
         );
-        Math.floor(Math.random() * true_answer.length);
+
+        questionCount.textContent = `Questions:${questions.length}`;
+
         inputQuestion.value = "";
         true_answer[0].value = "";
         true_answer[1].value = "";
@@ -51,7 +58,7 @@ export const yourTest = () => {
         // second_answer.value = "";
         // third_answer.value = "";
 
-        if (questions.length == 4) {
+        if (questions.length == 10) {
             your_wrapper.className = "hide";
             wrapper.style.display = "table";
             return Update();
