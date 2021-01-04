@@ -44,7 +44,7 @@ export const yourTest = () => {
                 ].sort(() => Math.random() - 0.5)
             )
         );
-
+        //выводим длину массива
         questionCount.textContent = `Questions:${questions.length}`;
 
         inputQuestion.value = "";
@@ -57,7 +57,7 @@ export const yourTest = () => {
         // first_answer.value = "";
         // second_answer.value = "";
         // third_answer.value = "";
-
+        //считаем кол-во вопросов в массиве и запускаем
         if (questions.length == 10) {
             your_wrapper.className = "hide";
             wrapper.style.display = "table";

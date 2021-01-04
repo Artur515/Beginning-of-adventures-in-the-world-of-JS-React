@@ -44,6 +44,7 @@ const testBMW = () => {
     const pagesElem = document.getElementById("pages");
 
     class Test {
+        //сам тест который принимает все вопросы ответы и считает
         constructor(type, questions, results) {
             this.type = type;
 
@@ -59,14 +60,16 @@ const testBMW = () => {
         }
 
         Click(index) {
+            //добавляем очки
             let value = this.questions[this.current].Click(index);
             this.score += value;
 
             let correct = -1;
-
+            //Если было добавлено хотя бы одно очко, то считаем, что ответ верный
             if (value >= 1) {
                 correct = index;
             } else {
+                //или ищем правильный
                 for (
                     let i = 0;
                     i < this.questions[this.current].answers.length;
@@ -81,7 +84,7 @@ const testBMW = () => {
                     }
                 }
             }
-
+            //следующий вопрос
             this.Next();
 
             return correct;
@@ -94,7 +97,7 @@ const testBMW = () => {
                 this.End();
             }
         }
-
+        //результат пользователя
         End() {
             for (let i = 0; i < this.results.length; i++) {
                 if (this.results[i].Check(this.score)) {
@@ -248,6 +251,7 @@ const testBMW = () => {
 
             Init();
         } else {
+            //Если это конец, то выводим результат
             buttonsElem.innerHTML = "";
             buttonsElem.innerHTML = '<img src="gift.jpg">';
             headElem.innerHTML = test.results[test.result].text;
@@ -285,7 +289,7 @@ const testBMW = () => {
         } else {
             btns[index].className = "button button_correct";
         }
-
+        //Ждём секунду и обновляем тест
         setTimeout(Update, 1000);
     }
 };
