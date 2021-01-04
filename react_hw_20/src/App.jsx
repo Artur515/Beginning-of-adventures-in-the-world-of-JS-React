@@ -14,9 +14,11 @@ const App = () => {
     const [users, setUsers] = useState(chooseArr);
 
     const createUser = (user) => {
-        user.id = Math.floor(Math.random() * 1000);
+        user.id = users.length + 1;
         userArr.push(user);
+        setUsers([userArr]);
         localStorage.setItem("users", JSON.stringify([...userArr]));
+        setUsers(JSON.parse(localStorage.getItem("users")));
     };
     const handleSearch = (event) => {
         const { value } = event.target;
@@ -25,10 +27,12 @@ const App = () => {
         });
         setUsers(result);
     };
+
     const deleteUser = (id) => {
         localStorage.setItem("users", JSON.stringify(users.filter((user) => user.id !== id)));
         setUsers(users);
     };
+
     return (
         <div className="App">
             <FormUser createUser={createUser} />
