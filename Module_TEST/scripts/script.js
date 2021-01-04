@@ -3,18 +3,36 @@ const wrapper = document.querySelector(".wrapper");
 const change_test = document.querySelector(".change_test");
 const runYourTest = document.querySelector("#create_test");
 const test_wrapper = document.querySelector("#your_test_wrapper");
+const timer = document.querySelector(".timer");
 import { yourTest } from "./yourTest.js";
 
 test_wrapper.className = "hide";
 
+const goGame = () => {
+    const $time = document.createElement("h1");
+    $time.className = "h2";
+    $time.textContent = 60;
+    timer.appendChild($time);
+
+    let gamingTime = setInterval(function () {
+        let time = parseFloat($time.textContent);
+        if (time <= 0) {
+            clearInterval(interval);
+        } else {
+            $time.textContent = (time - 0.1).toFixed(1);
+        }
+    }, 100);
+};
 const beginBMWTest = () => {
     change_test.style.display = "none";
     wrapper.style.display = "table";
+    goGame();
     testBMW();
 };
 const beginYourTest = () => {
     test_wrapper.className = "";
     change_test.style.display = "none";
+
     yourTest();
 };
 bmw.onclick = beginBMWTest;
