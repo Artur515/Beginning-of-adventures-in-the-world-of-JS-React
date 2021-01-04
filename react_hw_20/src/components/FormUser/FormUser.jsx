@@ -18,7 +18,7 @@ const FormUser = (props) => {
         props.createUser(user);
         setUser(formState);
     };
-   
+
     return (
         <form className="form_user" onSubmit={handleSubmit}>
             <input

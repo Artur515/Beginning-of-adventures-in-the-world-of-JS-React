@@ -14,7 +14,7 @@ const App = () => {
     const [users, setUsers] = useState(chooseArr);
 
     const createUser = (user) => {
-        user.id = users.length + 1;
+        user.id = Math.floor(Math.random() * 1000);
         userArr.push(user);
         setUsers([userArr]);
         localStorage.setItem("users", JSON.stringify([...userArr]));
@@ -23,13 +23,18 @@ const App = () => {
     const handleSearch = (event) => {
         const { value } = event.target;
         let result = chooseArr.filter((user) => {
-            return user.name.toLowerCase().includes(value.toLowerCase());
+            return user.name
+                .toLowerCase()
+                .includes(value.toLowerCase());
         });
         setUsers(result);
     };
 
     const deleteUser = (id) => {
-        localStorage.setItem("users", JSON.stringify(users.filter((user) => user.id !== id)));
+        localStorage.setItem(
+            "users",
+            JSON.stringify(users.filter((user) => user.id !== id))
+        );
         setUsers(users);
     };
 
@@ -38,7 +43,10 @@ const App = () => {
             <FormUser createUser={createUser} />
             <ContentUser users={users} deleteUser={deleteUser} />
             <Footer users={users} />
-            <SearchInput className="search" handleSearch={handleSearch} />
+            <SearchInput
+                className="search"
+                handleSearch={handleSearch}
+            />
         </div>
     );
 };
