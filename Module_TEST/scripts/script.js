@@ -1,7 +1,11 @@
-const create_test = document.getElementById("create_test");
 const bmw = document.getElementById("bmw");
 const wrapper = document.querySelector(".wrapper");
 const change_test = document.querySelector(".change_test");
+const runYourTest = document.querySelector("#create_test");
+const test_wrapper = document.querySelector("#your_test_wrapper");
+import { yourTest } from "./yourTest.js";
+
+test_wrapper.className = "hide";
 
 const beginBMWTest = () => {
     change_test.style.display = "none";
@@ -9,10 +13,12 @@ const beginBMWTest = () => {
     testBMW();
 };
 const beginYourTest = () => {
+    test_wrapper.className = "";
+    change_test.style.display = "none";
     yourTest();
 };
 bmw.onclick = beginBMWTest;
-change_test.onclick = beginYourTest;
+runYourTest.onclick = beginYourTest;
 
 const testBMW = () => {
     const headElem = document.getElementById("head");
@@ -265,3 +271,5 @@ const testBMW = () => {
         setTimeout(Update, 1000);
     }
 };
+
+////////////////////////////////////////////
