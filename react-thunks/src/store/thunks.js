@@ -1,5 +1,8 @@
 import { getCurrentUserThunk } from "./auth/thunks";
 import { getAllUsersThunk } from "./users/thunks";
+
+
+
 export const initThunk = () => {
     return async (dispatch) => {
         try {
