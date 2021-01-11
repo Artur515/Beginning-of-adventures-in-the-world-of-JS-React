@@ -1,9 +1,9 @@
 
-import './App.css';
+import styleApp from './App.module.css';
 
 const App = () => {
     return (
-        <div className="App">
+        <div className={styleApp.App}>
             Hipstagramm
         </div>
     );
