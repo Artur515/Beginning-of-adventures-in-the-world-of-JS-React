@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
-  font-size: xxx-large;
+    display: flex;
+    background: url('./img/friends-registration.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
