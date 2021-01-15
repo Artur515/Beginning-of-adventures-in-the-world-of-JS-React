@@ -1,4 +1,4 @@
-import {ActionsTypes} from "./ActionsTypes";
+import {ADD_USERS, GET_USERS} from "./actions";
 
 
 const defaultState = {
@@ -8,9 +8,9 @@ const defaultState = {
 
 const userReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case ActionsTypes.ADD_USERS:
+        case ADD_USERS:
             return {...state, users: state.users + action.payload}
-        case ActionsTypes.GET_USERS:
+        case GET_USERS:
             return {...state, users: state.users - action.payload}
         default:
             return state
