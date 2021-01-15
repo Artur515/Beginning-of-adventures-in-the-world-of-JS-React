@@ -9,7 +9,7 @@ const Application = () => {
         <div className={style.wrapper}>
 
                 <Registration/>
-                {/*<Auth/>*/}
+                <Auth/>
         </div>
     )
 }

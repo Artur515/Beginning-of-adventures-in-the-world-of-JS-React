@@ -1,7 +1,15 @@
-.forms{
+.input{
+    width: 250px;
+}
+.form{
+    width:400px;
     color: aliceblue;
 }
 .input{
-    width: 300px;
-    height: 20px;
+    height: 25px;
+    width: 80%;
+    border-radius: 4px;
+}
+.p{
+    color: red;
 }
