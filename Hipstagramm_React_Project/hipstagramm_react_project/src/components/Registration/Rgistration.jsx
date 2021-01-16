@@ -3,7 +3,7 @@ import {Button} from "semantic-ui-react";
 import {registrationContent} from '../../static'
 import {useForm} from "react-hook-form";
 import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
+import {yupResolver} from '@hookform/resolvers/yup';
 
 let schema = yup.object().shape({
     username: yup.string().required(),
@@ -21,6 +21,7 @@ const Registration = () => {
     }
 
     return (
+
         <div className={styles.form}>
             <h1>Hipstagramm</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -38,32 +39,9 @@ const Registration = () => {
                 <Button basic inverted type='submit'>Submit</Button>
             </form>
         </div>
+
     )
 }
 
-
-//         <div className={styles.forms}>
-//             <h3>Sing Up</h3>
-//             <form>
-//                 <input type="text" placeholder="Enter your name" className={styles.input}/>
-//                 <input type="text"
-//                        name='login'
-//                        autoComplete='off'
-//                        placeholder='E-mail'
-//                        spellCheck={false}
-//                        className={styles.input}
-//                 />
-//                 <input className={styles.input} type="password" name='password' placeholder='Password'/>
-//                 <input className={styles.input} type="password" name='password' placeholder='Repead password'/>
-//
-// <div className={styles.btn}>
-//     <Button onClick={handleClick}  basic inverted>Sing Up</Button>
-// </div>
-//
-//
-//             </form>
-//
-//
-//         </div>
 
 export default Registration
