@@ -1,35 +1,21 @@
-/*.forms{*/
-/*    color: aliceblue;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    height: 250px;*/
 
-/*}*/
-/*.forms img{*/
-/*    width: 100px;*/
-/*}*/
-
-/*.forms h3{*/
-/*    margin-left: 8px;*/
-/*}*/
-/*.input {*/
-
-/*    width:60%;*/
-/*    height: 25px;*/
-/*    margin: 5px;*/
-/*    background: transparent;*/
-/*    border: 1px solid gray;*/
-/*    border-radius: 4px;*/
-/*    color: white;*/
-/*}*/
-
-/*.btn{*/
-/*    margin-left: 5px;*/
-/*}*/
+.main{
+    background-image: url("../../img/friendsRegistration.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+    color: aliceblue;
+}
 
 .form{
     width:320px;
-    color: aliceblue;
+    margin: 15px;
+
+}
+.main h1{
+    margin: 15px;
 }
 .input{
     height: 25px;

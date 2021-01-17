@@ -4,6 +4,7 @@ import {registrationContent} from '../../static'
 import {useForm} from "react-hook-form";
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {Link} from "react-router-dom";
 
 let schema = yup.object().shape({
     username: yup.string().required(),
@@ -19,27 +20,29 @@ const Registration = () => {
     const onSubmit = (data) => {
         console.log(data)
     }
-
     return (
-
-        <div className={styles.form}>
+        <div className={styles.main}>
             <h1>Hipstagramm</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                {registrationContent.inputs.map((input, key) => {
-                    return <div key={key}>
-                        <div>
-                            <label className={styles.input}>{input.label}</label>
+            <div className={styles.form}>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    {registrationContent.inputs.map((input, key) => {
+                        return <div key={key}>
+                            <div>
+                                <label className={styles.input}>{input.label}</label>
+                            </div>
+                            <div>
+                                <input className={styles.input} name={input.name} type={input.type} ref={register}/>
+                            </div>
+                            <p className={styles.p}>{errors[input.name]?.message}</p>
                         </div>
-                        <div>
-                            <input className={styles.input} name={input.name} type={input.type} ref={register}/>
-                        </div>
-                        <p className={styles.p}>{errors[input.name]?.message}</p>
+                    })}
+                    <Button basic inverted type='submit'>Submit</Button>
+                    <div className={styles.link}>
+                        If you have account you can <Link to="./auth"><h4>Login</h4> </Link>
                     </div>
-                })}
-                <Button basic inverted type='submit'>Submit</Button>
-            </form>
+                </form>
+            </div>
         </div>
-
     )
 }
 

@@ -1,8 +1,4 @@
-.App {
-    display: flex;
-    background: url('./img/friends-registration.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-}
 
+.App{
+    width: 100%;
+}
