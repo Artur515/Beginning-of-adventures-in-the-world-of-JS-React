@@ -1,4 +1,8 @@
-.wrapper{
+.wrapper {
+position: relative;
+}
 
-    margin: 15px;
+.main {
+    position: absolute;
+    width: 100%;
 }
