@@ -1,10 +1,12 @@
 import styles from './registrationStyle.module.css'
-import {Button} from "semantic-ui-react";
 import {registrationContent} from '../../static'
 import {useForm} from "react-hook-form";
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {Link} from "react-router-dom";
+import React from "react";
+import {Button} from "semantic-ui-react";
+
 
 let schema = yup.object().shape({
     username: yup.string().required(),
@@ -14,31 +16,37 @@ let schema = yup.object().shape({
 
 
 const Registration = () => {
+
+
     const {register, handleSubmit, errors} = useForm({
         resolver: yupResolver(schema)
     })
-    const onSubmit = (data) => {
-        console.log(data)
+    const handleRegistrationSubmit = (event) => {
+        console.log(event)
+
     }
+
+
     return (
         <div className={styles.main}>
-            <h1>Hipstagramm</h1>
+            <Link to='./'><h1>Hipstagramm</h1></Link>
             <div className={styles.form}>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(handleRegistrationSubmit)}>
                     {registrationContent.inputs.map((input, key) => {
                         return <div key={key}>
                             <div>
                                 <label className={styles.input}>{input.label}</label>
                             </div>
                             <div>
-                                <input className={styles.input} name={input.name} type={input.type} ref={register}/>
+                                <input className={styles.input} name={input.name} type={input.type}
+                                       ref={register}/>
                             </div>
                             <p className={styles.p}>{errors[input.name]?.message}</p>
                         </div>
                     })}
-                    <Button basic inverted type='submit'>Submit</Button>
+                    <Button basic inverted type='submit' onClick={handleRegistrationSubmit}>Submit</Button>
                     <div className={styles.link}>
-                        If you have account you can <Link to="./auth"><h4>Login</h4> </Link>
+                        If you have account you can <Link to="./auth"><h4>Login</h4></Link>
                     </div>
                 </form>
             </div>

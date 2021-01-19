@@ -7,6 +7,8 @@ import {animated, useTransition} from "react-spring";
 import style from './style.module.css'
 
 const Application = () => {
+
+
     const location = useLocation()
     const transitions = useTransition(location, location => location.pathname, {
         from: {

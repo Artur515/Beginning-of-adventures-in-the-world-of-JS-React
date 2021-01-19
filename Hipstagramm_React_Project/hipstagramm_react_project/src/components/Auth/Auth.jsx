@@ -22,7 +22,7 @@ const Auth = () => {
     }
     return (
         <div className={styles.main}>
-            <h1>Hipstagramm</h1>
+            <Link to='./'><h1>Hipstagramm</h1></Link>
             <div className={styles.form}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {authContent.inputs.map((input, key) => {
@@ -39,7 +39,7 @@ const Auth = () => {
                     <Button basic inverted type='submit'>Submit</Button>
                 </form>
                 <div className={styles.link}>
-                    If you not have account you can<Link to="./registration"><h4>Registration</h4> </Link>
+                    If you not have account you can<Link to="./registration"><h4>Registration</h4></Link>
                 </div>
             </div>
         </div>
