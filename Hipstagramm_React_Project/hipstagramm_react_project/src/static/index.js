@@ -2,7 +2,7 @@ export const registrationContent = {
     inputs: [
         {
             label: 'Login',
-            name: 'login',
+            name: 'name',
             type: 'text'
         },
         {
@@ -16,13 +16,6 @@ export const registrationContent = {
             name: 'password',
             type: 'password'
         },
-        {
-            label: "RepeatPassword",
-            name: 'password',
-            type: 'password'
-
-        },
-
     ]
 }
 
@@ -31,7 +24,7 @@ export const authContent = {
         {
             label: 'Email',
             name: 'email',
-            type:'email'
+            type: 'email'
         },
         {
 

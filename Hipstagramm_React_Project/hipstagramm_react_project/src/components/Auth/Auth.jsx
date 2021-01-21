@@ -36,7 +36,7 @@ const Auth = () => {
                             <p className={styles.p}>{errors[input.name]?.message}</p>
                         </div>
                     })}
-                    <Button basic inverted type='submit'>Submit</Button>
+                    <Button basic inverted >Submit</Button>
                 </form>
                 <div className={styles.link}>
                     If you not have account you can<Link to="./registration"><h4>Registration</h4></Link>
