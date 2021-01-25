@@ -1,11 +1,11 @@
 import React from 'react'
-import Registration from "../Registration/Rgistration";
-import Auth from "../Auth/Auth";
+import Registration from "../container/Registration/Rgistration";
+import Auth from "../container/Auth/Auth";
 import {Route, Switch, useLocation} from "react-router-dom";
-import Home from "../Home/Home";
+import Home from "../container/Home/Home";
 import {animated, useTransition} from "react-spring";
 import style from './style.module.css'
-
+import Profile from "../Profile/Profile";
 const Application = () => {
 
 
@@ -34,6 +34,7 @@ const Application = () => {
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/auth" component={Auth}/>
                             <Route exact path="/registration" component={Registration}/>
+                            <Route path='/profile' component={Profile}></Route>
                         </Switch>
                     </div>
 

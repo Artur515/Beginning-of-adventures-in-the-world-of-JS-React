@@ -1,6 +1,6 @@
 
 .main{
-    background-image: url("../../img/friendsRegistration.jpg");
+    background-image: url("../../../img/friendsLogin.jpg");
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center center;
@@ -8,6 +8,7 @@
     height: 100vh;
     color: aliceblue;
 }
+
 
 .form{
     width:320px;

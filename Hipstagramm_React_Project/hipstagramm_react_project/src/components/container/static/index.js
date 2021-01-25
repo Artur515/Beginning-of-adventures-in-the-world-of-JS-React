@@ -22,9 +22,9 @@ export const registrationContent = {
 export const authContent = {
     inputs: [
         {
-            label: 'Email',
-            name: 'email',
-            type: 'email'
+            label: 'Login',
+            name: 'name',
+            type: 'text'
         },
         {
 
