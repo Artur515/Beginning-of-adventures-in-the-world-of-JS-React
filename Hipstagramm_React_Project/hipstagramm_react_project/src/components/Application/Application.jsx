@@ -32,9 +32,10 @@ const Application = () => {
                     <div className={style.main}>
                         <Switch location={item}>
                             <Route exact path="/" component={Home}/>
-                            <Route exact path="/auth" component={Auth}/>
-                            <Route exact path="/registration" component={Registration}/>
-                            <Route path='/profile' component={Profile}></Route>
+                            <Route exact path="/auth/login" component={Auth}/>
+                            <Route exact path="/auth/registration" component={Registration}/>
+                            <Route path='/users/current' component={Profile}></Route>
+
                         </Switch>
                     </div>
 

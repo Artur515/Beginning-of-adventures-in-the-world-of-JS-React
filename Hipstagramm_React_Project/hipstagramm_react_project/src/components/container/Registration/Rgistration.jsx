@@ -31,7 +31,7 @@ const Registration = (props) => {
         if ((name, email, password)) {
             dispatch(registration(name, email, password))
                 .then(() => {
-                    props.history.push("/auth");
+                    props.history.push("/auth/login");
                     window.location.reload();
                     setSuccessful(true);
                 })
@@ -43,7 +43,7 @@ const Registration = (props) => {
 
     return (
         <div className={styles.main}>
-            <Link to="./">
+            <Link to="/">
                 <h1>Hipstagramm</h1>
             </Link>
             <div className={styles.form}>
@@ -75,7 +75,7 @@ const Registration = (props) => {
                     </Button>
                     <div className={styles.link}>
                         If you have account you can{" "}
-                        <Link to="./auth">
+                        <Link to="/auth/login">
                             <h4>Login</h4>
                         </Link>
                     </div>

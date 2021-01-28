@@ -1,14 +1,14 @@
 import styles from "./authStyle.module.css";
-import { authContent } from "../static";
-import { Button } from "semantic-ui-react";
+import {authContent} from "../static";
+import {Button, Loader} from "semantic-ui-react";
 import * as yup from "yup";
-import { yupResolver} from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../../actions/auth/action";
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {useForm} from "react-hook-form";
+import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {login} from "../../../actions/auth/action";
+import React, {useState} from "react";
+import {Redirect} from "react-router-dom";
 
 let schema = yup.object().shape({
     name: yup.string().required(),
@@ -17,25 +17,26 @@ let schema = yup.object().shape({
 
 const Auth = (props) => {
 
-    const { register, handleSubmit, errors } = useForm({
+    const {register, handleSubmit, errors} = useForm({
         resolver: yupResolver(schema)
     });
     ///надо добавить loader
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
-    const { isLoggedIn } = useSelector((state) => state.auth);
-    const { message } = useSelector((state) => state.message);
+    const {isLoggedIn} = useSelector((state) => state.auth);
+    const {message} = useSelector((state) => state.message);
 
     const onSubmit = (data) => {
         console.log(data)
-        const{name,password}=data
+        const {name, password} = data
 
         setLoading(true)
-        if (name,password) {
-            dispatch(login(name,password)).then(() => {
-                props.history.push('./profile')
-                window.location.reload()
-            })
+        if (name, password) {
+            dispatch(login(name, password))
+                .then(() => {
+                    props.history.push('/users/current')
+                    window.location.reload()
+                })
                 .catch(() => {
                     setLoading(false)
                 })
@@ -44,16 +45,16 @@ const Auth = (props) => {
         }
     };
     if (isLoggedIn) {
-        return <Redirect to="/profile" />;
+        return <Redirect to="/users/current"/>
     }
 
     return (
         <div className={styles.main}>
-            <Link to="./">
+            <Link to="/">
                 <h1>Hipstagramm</h1>
             </Link>
             <div className={styles.form}>
-              <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     {authContent.inputs.map((input, key) => {
                         return (
                             <div key={key}>
@@ -76,13 +77,14 @@ const Auth = (props) => {
                             </div>
                         );
                     })}
-                    <Button basic inverted>
+                    <Button basic inverted disabled={loading}>
                         Submit
                     </Button>
+                    {loading && <Loader active inline='centered'/>}
                 </form>
-                <div className={styles.link}>
+                <div>
                     If you not have account you can
-                    <Link to="./registration">
+                    <Link to="/auth/registration">
                         <h4>Registration</h4>
                     </Link>
                 </div>

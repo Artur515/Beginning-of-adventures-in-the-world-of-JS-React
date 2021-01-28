@@ -9,7 +9,7 @@ export const registrationCurrentUser = (login,email,password) => {
 export const loginCurrentUser = (login, password) => {
     return axios.post(API_URL + '/auth/login', {login, password})
         .then((response) => {
-            if (response.data.accessToken) {
+            if (response.data.access_token) {
                 localStorage.setItem('currentUserToken', JSON.stringify(response.data))
             }
             return response.data
