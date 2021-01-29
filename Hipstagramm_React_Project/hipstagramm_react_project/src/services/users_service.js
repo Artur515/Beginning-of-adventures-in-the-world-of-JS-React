@@ -1,10 +1,10 @@
 import axios from "axios";
-import {authHeader} from "./auth_header_servise";
+import {authHeader, instance} from "./auth_header_servise";
 
 const API_URL = 'https://hipstagram-api.herokuapp.com'
 
 export const getCurrentUser = () => {
-    return axios.get(API_URL + '/users/current', {headers: authHeader()})
+    return instance.get('/users/current' )//можно так
 }
 
 export const getUserByID = () => {
