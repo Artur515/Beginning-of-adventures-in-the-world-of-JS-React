@@ -4,61 +4,61 @@ import {authHeader, instance} from "./auth_header_servise";
 const API_URL = 'https://hipstagram-api.herokuapp.com'
 
 export const getCurrentUser = () => {
-    return instance.get('/users/current' )//можно так
+    return instance.get('/users/current')//можно так
 }
 
 export const getUserByID = () => {
-    return axios.get(API_URL + '/users/:userId', {headers: authHeader()})
+    return instance.get('/users/:userId')
 }
 
 export const getUsersBylogin = () => {
-    return axios.get(API_URL + '/users', {headers: authHeader()})
+    return instance.get('/users')
 }
 
 export const deleteUser = () => {
-    return axios.delete(API_URL + '/users/:userId', {headers: authHeader()})
+    return instance.delete('/users/:userId')
 }
 
 export const getFollowersAndFollowingOfUserByUserID = () => {
-    return axios.get(API_URL + '/users/followersAndFollowing/:userId', {headers: authHeader()}).then((response) => {
+    return instance.get('/users/followersAndFollowing/:userId').then((response) => {
         console.log(response.data)
     })
 }
 
 export const followUser = () => {
-    return axios.get(API_URL + '/users/follow/:userId', {headers: authHeader()})
+    return instance.get('/users/follow/:userId')
 }
 
 export const createPost = (form, title, img) => {
-    return axios.post(API_URL + '/posts', {form, title, img}, {headers: authHeader()})
+    return instance.post('/posts', {form, title, img})
         .then((response) => {
             console.log(response)
         })
 }
 
 export const getPostById = () => {
-    return axios.get(API_URL + '/posts/:postId', {headers: authHeader()})
+    return instance.get('/posts/:postId')
         .then((response) => {
             console.log(response)
         })
 }
 
 export const likePost = () => {
-    return axios.get(API_URL + '/posts/like/:postId', {headers: authHeader()})
+    return instance.get('/posts/like/:postId')
         .then((response) => {
             console.log(response)
         })
 }
 
-export const getFeed=()=>{
-    return axios.get(API_URL+'/posts/feed',{headers:authHeader()})
-        .then((response)=>{
+export const getFeed = () => {
+    return instance.get('/posts/feed')
+        .then((response) => {
             console.log(response)
         })
 }
 
-export const getCommentsByPostId = (post,text) => {
-    return axios.get(API_URL + '/comments/:postId', {headers: authHeader()})
+export const getCommentsByPostId = (post, text) => {
+    return instance.get('/comments/:postId')
         .then((response) => {
             console.log(response)
         })
@@ -66,7 +66,7 @@ export const getCommentsByPostId = (post,text) => {
 
 
 export const createComment = () => {
-    return axios.get(API_URL + '/comments', {headers: authHeader()})
+    return instance.get('/comments')
         .then((response) => {
             console.log(response)
         })
