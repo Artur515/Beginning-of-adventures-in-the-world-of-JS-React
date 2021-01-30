@@ -6,6 +6,8 @@ import Home from "../container/Home/Home";
 import {animated, useTransition} from "react-spring";
 import style from './style.module.css'
 import Profile from "../Profile/Profile";
+import Layout from "../Layout/Layout";
+
 const Application = () => {
 
 
@@ -32,10 +34,9 @@ const Application = () => {
                     <div className={style.main}>
                         <Switch location={item}>
                             <Route exact path="/" component={Home}/>
-                            <Route exact path="/auth/login" component={Auth}/>
-                            <Route exact path="/auth/registration" component={Registration}/>
-                            <Route path='/users/current' component={Profile}></Route>
-
+                            <Route path="/auth/login" component={Auth}/>
+                            <Route path="/auth/registration" component={Registration}/>
+                            <Route path='/users/current' component={Layout}></Route>
                         </Switch>
                     </div>
 
