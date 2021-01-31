@@ -1,14 +1,27 @@
 import {useSelector} from "react-redux";
-import React, {useState} from "react";
+import React from "react";
 
 import style from './style.module.css'
 
 
 const Profile = () => {
-    const {user: currentUser} = useSelector((state) => state.auth)
+
+
+
+    const user = useSelector((store) => store.users.currentUser)
+    const {login,avatar,_id,email}=user
     return (
         <div>
-            lorem2000
+
+
+                        <div>
+                            <p>id:{_id}</p>
+                            <img src={avatar} alt=""/>
+                            <h6>Login{login}</h6>
+                            <p>email{email}</p>
+                        </div>
+
+
         </div>
     )
 }

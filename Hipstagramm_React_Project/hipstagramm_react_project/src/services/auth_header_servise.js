@@ -1,4 +1,3 @@
-import axios from "axios";
 
 export const authHeader = () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUserToken'))
@@ -10,7 +9,3 @@ export const authHeader = () => {
 }
 
 
-export const instance = axios.create({
-    baseURL: 'https://hipstagram-api.herokuapp.com',
-    headers: authHeader()//здесь токен
-})
