@@ -15,7 +15,9 @@ let schema = yup.object().shape({
     password: yup.string().required().min(6),
 });
 
+
 const Auth = (props) => {
+
 
     const {register, handleSubmit, errors} = useForm({
         resolver: yupResolver(schema)
@@ -47,6 +49,7 @@ const Auth = (props) => {
     if (isLoggedIn) {
         return <Redirect to="/users/current"/>
     }
+
 
     return (
         <div className={styles.main}>

@@ -1,5 +1,8 @@
-import {DELETE_USERS, GET_CURRENT_USER} from "../../constants/ActionTypes";
+import {DELETE_USERS, GET_CURRENT_USER, GET_USERS} from "../../constants/ActionTypes";
 
+export const getUsers = () => {
+    return {type: GET_USERS}
+}
 
 export const getCurrentUser = () => {
     return {type: GET_CURRENT_USER}

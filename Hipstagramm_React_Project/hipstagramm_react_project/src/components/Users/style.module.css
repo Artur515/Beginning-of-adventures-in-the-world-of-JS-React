@@ -1,0 +1,15 @@
+.content {
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content img {
+    max-width: 125px;
+    border-radius: 50%;
+}

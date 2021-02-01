@@ -10,4 +10,4 @@ export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
 //Users
 export const GET_USERS = 'GET_USERS'
 export const DELETE_USERS = 'DELETE_USERS'
-export const GET_CURRENT_USER='GET_CURRENT_USER'
+export const GET_CURRENT_USER = 'GET_CURRENT_USER'

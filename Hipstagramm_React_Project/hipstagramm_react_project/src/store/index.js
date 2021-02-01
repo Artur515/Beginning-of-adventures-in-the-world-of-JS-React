@@ -2,16 +2,16 @@ import {applyMiddleware, createStore} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import {rootReducer} from "../reducers/rootReducer/reducer";
-import {getAllUsersThunk} from "../thunks/usersThunk";
-
-
+import {initThunk} from "../thunks/initThunk";
 
 
 const middlewares = applyMiddleware(thunk);
 
 const store = createStore(rootReducer, composeWithDevTools(middlewares))
-  store.dispatch(getAllUsersThunk())
-store.dispatch(getAllUsersThunk())
+
+store.dispatch(initThunk())
+
+
 // const init=()=>{
 //     return async (dispatch,getState)=>{
 //         const {token}=store.getState().auth

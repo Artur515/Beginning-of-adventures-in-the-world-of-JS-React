@@ -1,9 +1,14 @@
-import { useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {Button, Icon} from "semantic-ui-react";
+import style from './style.module.css'
+import {connect} from 'react-redux';
 
 
 
 
 const Users = () => {
+
+    const dispatch = useDispatch
 
     const allUsers = useSelector((store) => store.users.listUsers)
 
@@ -11,12 +16,18 @@ const Users = () => {
     return (
         <div>
             {
-             allUsers.map((user) => {
+                allUsers.map((user) => {
                     return (
-                        <div>
-                            <p>id:{user._id}</p>
-                            <img src={user.avatar} alt=""/>
-                            <h6>Login{user.login}</h6>
+                        <div className={style.content} key={user._id}>
+                            <img src={user.avatar} alt="avatar"/>
+                            <h3>Login{user.login}</h3>
+                            <br/>
+                            {/*установит follow unfollow и поменять цвет*/}
+                            <Button.Group>
+                                <Button basic color='blue' size='large'>Follow</Button>
+                                <Button basic color='red' >
+                                    <Icon name=' user delete ' size='large'/></Button>
+                            </Button.Group>
                         </div>
                     )
                 })
@@ -25,4 +36,4 @@ const Users = () => {
     )
 }
 
-export default Users
+export default connect()(Users)

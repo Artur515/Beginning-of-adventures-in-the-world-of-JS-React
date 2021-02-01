@@ -1,12 +1,13 @@
-import { Icon, Input, Menu} from "semantic-ui-react";
+import {Icon, Input, Menu} from "semantic-ui-react";
 import React, {useState} from "react";
 import style from './style.module.css'
+
 const Header = () => {
     const [activeItem, setActiveItem] = useState({activeItem: 'home'})
     const handleItemClick = (e, {name}) => setActiveItem({activeItem: name})
 
     return (
-        <div >
+        <div>
             <Menu stackable size='large' >
                 <Menu.Item>
                     <img src='/logo.png'/>
@@ -25,7 +26,7 @@ const Header = () => {
                 <Menu.Item
                     name='logout'
                     active={activeItem === 'logout'}
-                    onClick={handleItemClick}><Icon name='log out'/> </Menu.Item>
+                    onClick={handleItemClick}><Icon name='log out' color="red"/> </Menu.Item>
             </Menu>
 
         </div>
