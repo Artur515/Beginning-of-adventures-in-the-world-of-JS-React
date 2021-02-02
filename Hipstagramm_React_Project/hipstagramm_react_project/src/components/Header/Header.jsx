@@ -1,14 +1,26 @@
 import {Icon, Input, Menu} from "semantic-ui-react";
 import React, {useState} from "react";
 import style from './style.module.css'
+import {useDispatch, useSelector} from "react-redux";
+import { logOut} from "../../actions/auth/action";
+import {Redirect} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+
+
     const [activeItem, setActiveItem] = useState({activeItem: 'home'})
     const handleItemClick = (e, {name}) => setActiveItem({activeItem: name})
+    const dispatch = useDispatch()
+    const {isLoggedIn} = useSelector((state) => state.auth);
+
+    const handleLogOut = () => {
+        dispatch(logOut())
+    }
+
 
     return (
         <div>
-            <Menu stackable size='large' >
+            <Menu stackable size='large'>
                 <Menu.Item>
                     <img src='/logo.png'/>
                     <p><h3>Hipstagramm</h3></p>
@@ -26,7 +38,7 @@ const Header = () => {
                 <Menu.Item
                     name='logout'
                     active={activeItem === 'logout'}
-                    onClick={handleItemClick}><Icon name='log out' color="red"/> </Menu.Item>
+                    onClick={handleLogOut}><Icon name='log out' color="red"/> </Menu.Item>
             </Menu>
 
         </div>
