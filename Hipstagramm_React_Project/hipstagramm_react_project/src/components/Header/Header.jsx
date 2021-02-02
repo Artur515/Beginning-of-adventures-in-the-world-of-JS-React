@@ -15,6 +15,7 @@ const Header = (props) => {
 
     const handleLogOut = () => {
         dispatch(logOut())
+        window.location.replace('/auth/login')
     }
 
 

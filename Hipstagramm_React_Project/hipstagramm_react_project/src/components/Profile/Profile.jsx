@@ -9,14 +9,15 @@ import {Button, Item} from "semantic-ui-react";
 const Profile = () => {
 
 
-    const [counter, setCounter] = useState()
 
     const user = useSelector((store) => store.users.currentUser)
     console.log(user)
-    const {login, avatar, id, email, posts, followers, following} = user
 
+if(user!==null){
+    const {login, avatar, id, email, posts, followers, following} = user
     return (
-        <>
+
+        <>     { console.log(user.following)}
             <div>
                 <Item.Group relaxed>
                     <Item>
@@ -27,9 +28,9 @@ const Profile = () => {
                             {/*<Item.Description>Hello</Item.Description>*/}
                             <Item.Extra>
                                 <div className={style.info}>
-                                    <div> post</div>
-                                    <div> followers</div>
-                                    <div> following</div>
+                                    <div> post:{posts.length}</div>
+                                    <div> followers:{followers.length}</div>
+                                    <div> following:{following.length}</div>
                                 </div>
                             </Item.Extra>
                         </Item.Content>
@@ -47,7 +48,9 @@ const Profile = () => {
                 </Item.Content>
             </Item>
         </>
-    )
+    )}else {
+    return (<h1>Loading</h1>)
+}
 }
 
 export default Profile

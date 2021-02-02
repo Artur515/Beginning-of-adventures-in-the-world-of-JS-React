@@ -2,9 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Button, Icon} from "semantic-ui-react";
 import style from './style.module.css'
 import {connect} from 'react-redux';
-
-
-
+///написать клик за пределом
 
 const Users = () => {
 
