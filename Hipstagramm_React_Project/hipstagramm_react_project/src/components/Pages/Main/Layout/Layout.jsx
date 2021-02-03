@@ -2,7 +2,7 @@ import style from './style.module.css'
 import {Container, Segment} from "semantic-ui-react";
 import React from "react";
 import Profile from "../Profile/Profile";
-import Header from "../Header/Header";
+import Header from "../../../Header/Header";
 import {Route, Switch} from "react-router-dom";
 import Users from "../Users/Users";
 

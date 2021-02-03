@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 import React, {useState} from "react";
 import style from './style.module.css'
-import {Button, Item} from "semantic-ui-react";
+import {Button, Dimmer, Image, Item, Loader, Segment} from "semantic-ui-react";
 
 
 
@@ -28,9 +28,9 @@ if(user!==null){
                             {/*<Item.Description>Hello</Item.Description>*/}
                             <Item.Extra>
                                 <div className={style.info}>
-                                    <div> post:{posts.length}</div>
-                                    <div> followers:{followers.length}</div>
-                                    <div> following:{following.length}</div>
+                                    <div> post: {posts.length}</div>
+                                    <div> followers: {followers.length}</div>
+                                    <div> following: {following.length}</div>
                                 </div>
                             </Item.Extra>
                         </Item.Content>
@@ -49,7 +49,15 @@ if(user!==null){
             </Item>
         </>
     )}else {
-    return (<h1>Loading</h1>)
+    return (
+        <Segment>
+            <Dimmer active inverted>
+                <Loader size='large'>Loading</Loader>
+            </Dimmer>
+
+            <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
+        </Segment>
+    )
 }
 }
 

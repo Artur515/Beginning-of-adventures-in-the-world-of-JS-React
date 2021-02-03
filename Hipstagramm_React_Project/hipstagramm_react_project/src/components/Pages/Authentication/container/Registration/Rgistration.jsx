@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registration } from "../../../actions/auth/action";
+import { registration } from "../../../../../actions/auth/action";
 
 let schema = yup.object().shape({
     name: yup.string().required(),

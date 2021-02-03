@@ -2,7 +2,7 @@ import {DELETE_USERS, GET_CURRENT_USER, GET_USERS} from "../../constants/ActionT
 
 
 const initialStateOfUsers = {
-    listUsers: [],
+    listUsers: null,
     currentUser: null
 }
 

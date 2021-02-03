@@ -6,7 +6,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {useForm} from "react-hook-form";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {login} from "../../../actions/auth/action";
+import {login} from "../../../../../actions/auth/action";
 import React, {useState} from "react";
 import {Redirect} from "react-router-dom";
 

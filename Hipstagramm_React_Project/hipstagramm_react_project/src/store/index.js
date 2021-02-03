@@ -11,7 +11,7 @@ const store = createStore(rootReducer, composeWithDevTools(middlewares))
 
 store.dispatch(initThunk())
 
-
+console.log(store.getState())
 // const init=()=>{
 //     return async (dispatch,getState)=>{
 //         const {token}=store.getState().auth
