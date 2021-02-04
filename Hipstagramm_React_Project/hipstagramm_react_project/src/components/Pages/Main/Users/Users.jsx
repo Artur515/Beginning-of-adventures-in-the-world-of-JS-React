@@ -4,7 +4,6 @@ import style from './style.module.css'
 import {connect} from 'react-redux';
 import React, {useState} from "react";
 
-
 ///написать клик за пределом
 
 
@@ -12,10 +11,15 @@ import React, {useState} from "react";
 
 const Users = () => {
 
+
     const dispatch = useDispatch
     const allUsers = useSelector((store) => store.users.listUsers)
     const [users, setUsers] = useState(allUsers)
     const chooseUsers = users == null ? allUsers : users
+
+
+
+
 
     const handleSearch = (event) => {
         const {value} = event.target
@@ -25,7 +29,6 @@ const Users = () => {
         setUsers(user)
         console.log(user)
     }
-
 
     if (allUsers !== null) {
         return (

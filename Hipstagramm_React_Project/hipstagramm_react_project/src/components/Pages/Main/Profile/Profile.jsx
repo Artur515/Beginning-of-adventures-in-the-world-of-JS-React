@@ -7,9 +7,6 @@ import {Button, Dimmer, Image, Item, Loader, Segment} from "semantic-ui-react";
 
 
 const Profile = () => {
-
-
-
     const user = useSelector((store) => store.users.currentUser)
     console.log(user)
 
