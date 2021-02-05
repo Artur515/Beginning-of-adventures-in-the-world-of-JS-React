@@ -2,14 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
-
-.third_segment {
+.form {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input {
@@ -17,8 +16,22 @@
     margin-bottom: 15px;
 }
 
-.input_password {
+.form_password {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form_div {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px;
+    flex-wrap: wrap;
+}
+
+.div_input {
     display: flex;
     flex-direction: column;
 }
+
 
