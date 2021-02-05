@@ -7,8 +7,6 @@ import React, {useState} from "react";
 ///написать клик за пределом
 
 
-
-
 const Users = () => {
 
 
@@ -16,9 +14,6 @@ const Users = () => {
     const allUsers = useSelector((store) => store.users.listUsers)
     const [users, setUsers] = useState(allUsers)
     const chooseUsers = users == null ? allUsers : users
-
-
-
 
 
     const handleSearch = (event) => {
@@ -36,20 +31,17 @@ const Users = () => {
                 <Input fluid icon='search' placeholder='Search...' onChange={handleSearch}/>
                 {
                     chooseUsers.map((user) => {
-                        return (
-                            <div className={style.content} key={user._id}>
-                                <img src={user.avatar} alt="avatar"/>
-                                <h3>Login{user.login}</h3>
-                                <br/>
-                                {/*установит follow unfollow и поменять цвет*/}
-                                <Button.Group>
+                            return (
+                                <div className={style.content} key={user._id}>
+                                    <img src={user.avatar} alt="avatar"/>
+                                    <h3>Login{user.login}</h3>
+                                    <br/>
+                                    {/*установит follow unfollow и поменять цвет*/}
                                     <Button basic color='blue' size='large'>Follow</Button>
-                                    <Button basic color='red'>
-                                        <Icon name=' user delete ' size='large'/></Button>
-                                </Button.Group>
-                            </div>
-                        )
-                    })
+                                </div>
+                            )
+                        },
+                    )
                 }
             </div>
         )

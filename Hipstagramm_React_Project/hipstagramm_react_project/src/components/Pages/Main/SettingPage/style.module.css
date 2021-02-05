@@ -1,0 +1,24 @@
+.first_segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.third_segment {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.input {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.input_password {
+    display: flex;
+    flex-direction: column;
+}
+

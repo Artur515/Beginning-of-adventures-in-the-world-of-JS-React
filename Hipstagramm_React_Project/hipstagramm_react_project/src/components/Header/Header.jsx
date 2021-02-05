@@ -25,8 +25,7 @@ const Header = (props) => {
             <Menu stackable size='large'>
                 <Menu.Item>
                     <img src='/logo.png'/>
-                    <p><Link onClick={() => window.location.reload()} className={style.link}><h3>Hipstagramm</h3></Link>
-                    </p>
+                 <Link onClick={() => window.location.reload()} className={style.link}><h3>Hipstagramm</h3></Link>
                 </Menu.Item>
                 <Menu.Item name='home'
                            active={activeItem === 'home'}
@@ -34,7 +33,8 @@ const Header = (props) => {
                                                            className={style.link}>Profile</Link></Menu.Item>
                 <Menu.Item name='setting'
                            active={activeItem === 'setting'}
-                           onClick={handleItemClick}><Link to='/users/setting' className={style.link}>Setting</Link></Menu.Item>
+                           onClick={handleItemClick}><Link to='/users/setting'
+                                                           className={style.link}>Setting</Link></Menu.Item>
                 <Menu.Item name='users'
                            active={activeItem === 'users'}
                            onClick={handleItemClick}><Link to='/users' className={style.link}>Users</Link></Menu.Item>

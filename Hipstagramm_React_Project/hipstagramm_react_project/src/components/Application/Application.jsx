@@ -1,7 +1,7 @@
 import React from 'react'
 import Registration from "../Pages/Authentication/container/Registration/Rgistration";
 import Auth from "../Pages/Authentication/container/Auth/Auth";
-import {Route, Switch, useLocation} from "react-router-dom";
+import {Route, Switch, useLocation, NavLink} from "react-router-dom";
 import Home from "../Pages/Authentication/container/Home/Home";
 import {animated, useTransition} from "react-spring";
 import style from './style.module.css'
