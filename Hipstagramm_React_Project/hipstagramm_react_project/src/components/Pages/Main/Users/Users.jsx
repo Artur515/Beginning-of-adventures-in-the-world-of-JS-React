@@ -25,7 +25,6 @@ const Users = () => {
 
         setFilterUsers(user)
     }
-    console.log(filterUsers)
 
 
     if (allUsers !== null) {
