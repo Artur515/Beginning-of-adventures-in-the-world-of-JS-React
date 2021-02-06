@@ -12,8 +12,8 @@ const Users = () => {
 
     const dispatch = useDispatch
     const allUsers = useSelector((store) => store.users.listUsers)
-    const [users, setUsers] = useState(allUsers)
-    const chooseUsers = users == null ? allUsers : users
+    const [filterUsers, setFilterUsers] = useState(allUsers)
+    const chooseUsers = filterUsers == null ? allUsers : filterUsers
 
 
     const handleSearch = (event) => {
@@ -21,7 +21,7 @@ const Users = () => {
         let user = allUsers.filter((user) => {
             return user.login.toLowerCase().includes(value.toLowerCase())
         })
-        setUsers(user)
+        setFilterUsers(user)
         console.log(user)
     }
 
@@ -34,7 +34,7 @@ const Users = () => {
                             return (
                                 <div className={style.content} key={user._id}>
                                     <img src={user.avatar} alt="avatar"/>
-                                    <h3>Login{user.login}</h3>
+                                    <h3>{user.login}</h3>
                                     <br/>
                                     {/*установит follow unfollow и поменять цвет*/}
                                     <Button basic color='blue' size='large'>Follow</Button>

@@ -1,12 +1,12 @@
-import {Button, Grid, Image, Input, Segment} from "semantic-ui-react";
+import {Button, Grid, Icon, Image, Segment} from "semantic-ui-react";
 import style from './style.module.css'
-
-
-
-
+import React from 'react'
+import Password from "./Save_Password_form/Password_Form";
+import Profile_form from "./Save_profile/Profile_form";
 
 
 const Setting = () => {
+
     return (
         <div>
             <Grid columns={2} stackable>
@@ -15,43 +15,26 @@ const Setting = () => {
                         <Segment className={style.first_segment}><Image
                             src='https://react.semantic-ui.com/images/wireframe/square-image.png' size='medium'
                             circular/><br/>
-                            <Button>Change photo</Button><br/>
+                            <label>Change photo </label>
+                            <Button as="label" htmlFor="file" type="button" animated="fade">
+                                <Button.Content visible>
+                                    <Icon name="file"/>
+                                </Button.Content>
+                                <Button.Content hidden>Change photo</Button.Content>
+                            </Button><br/>
+                            <input
+                                type="file"
+                                id="file"
+                                hidden
+                            />
                         </Segment>
                     </Grid.Column>
                     <Grid.Column>
-                        <Segment className={style.second_segment}>
-                            <form className={style.form}>
-                                <label>Login</label>
-                                <Input type='text' placeholder='Login' className={style.input}/>
-                                <label>First name</label>
-                                <Input type='text' placeholder='First name' className={style.input}/>
-                                <label>Last name</label>
-                                <Input type='text' placeholder='Last name' className={style.input}/>
-                                <label>Email</label>
-                                <Input type='email' placeholder='Email' className={style.input}/>
-                                <Button>Save profile</Button>
-                            </form>
-                        </Segment>
-
+                        {<Profile_form/>}
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Column width={16}>
-                    <Segment>
-                        <form className={style.form_password}>
-                            <div className={style.form_div}>
-                                <div className={style.div_input}>
-                                    <label>Password</label>
-                                    <Input  type='password' placeholder='Password'/>
-                                </div>
-                                <div className={style.div_input}>
-                                    <label>Confirm Password</label>
-                                    <Input type='password' placeholder='Password'/>
-                                </div>
-                            </div>
-                            <Button size='large'>Save password</Button>
-                        </form>
-                    </Segment>
-
+                    {<Password/>}
                 </Grid.Column>
             </Grid>
         </div>
