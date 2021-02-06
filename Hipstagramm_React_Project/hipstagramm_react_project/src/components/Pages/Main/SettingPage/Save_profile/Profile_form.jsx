@@ -11,7 +11,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 let schema = yup.object().shape({
     login: yup.string().required().min(2, 'Login is too short!').max(20, 'Login is too long!'),
     first_name: yup.string().required().min(2, 'First name is too short!').max(20, 'First name is too long!'),
-    last_Name: yup.string().required().min(2, 'Last name is too short!').max(20, 'Last name is too long!'),
+    last_name: yup.string().required().min(2, 'Last name is too short!').max(20, 'Last name is too long!'),
     email: yup.string().required("Please enter email").email(),
 });
 
