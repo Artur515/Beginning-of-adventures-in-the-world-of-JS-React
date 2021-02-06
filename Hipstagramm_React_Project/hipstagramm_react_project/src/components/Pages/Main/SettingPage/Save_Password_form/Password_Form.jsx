@@ -46,9 +46,8 @@ const Password = () => {
                                className={style.input}/>
                         {errors.confirm_password && <p className={style.p}>{errors.confirm_password.message}</p>}
                     </div>
-
                 </div>
-                <Button size='large'>Save password</Button>
+               <Button size='large' fluid>Save password</Button>
             </form>
         </Segment>
     )

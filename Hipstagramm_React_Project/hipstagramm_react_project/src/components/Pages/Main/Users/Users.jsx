@@ -3,6 +3,7 @@ import {Button, Dimmer, Icon, Image, Input, Loader, Segment} from "semantic-ui-r
 import style from './style.module.css'
 import {connect} from 'react-redux';
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 ///написать клик за пределом
 
@@ -15,15 +16,17 @@ const Users = () => {
     const [filterUsers, setFilterUsers] = useState(allUsers)
     const chooseUsers = filterUsers == null ? allUsers : filterUsers
 
-
+    console.log(allUsers)
     const handleSearch = (event) => {
         const {value} = event.target
         let user = allUsers.filter((user) => {
             return user.login.toLowerCase().includes(value.toLowerCase())
         })
+
         setFilterUsers(user)
-        console.log(user)
     }
+    console.log(filterUsers)
+
 
     if (allUsers !== null) {
         return (
@@ -33,10 +36,10 @@ const Users = () => {
                     chooseUsers.map((user) => {
                             return (
                                 <div className={style.content} key={user._id}>
-                                    <img src={user.avatar} alt="avatar"/>
-                                    <h3>{user.login}</h3>
+                                    <Link to='/users/'><img src={user.avatar} alt="avatar"/></Link>
+                                    <Link><h3>{user.login}</h3></Link>
                                     <br/>
-                                    {/*установит follow unfollow и поменять цвет*/}
+                                    {/*установить follow unfollow и поменять цвет*/}
                                     <Button basic color='blue' size='large'>Follow</Button>
                                 </div>
                             )

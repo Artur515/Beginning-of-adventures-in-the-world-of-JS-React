@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+align-items: center;
 }
 
 .second_segment {
@@ -29,7 +30,7 @@
 
 .form_div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 15px;
     flex-wrap: wrap;
 
@@ -44,8 +45,9 @@
 .div_input {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 200px;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -53,4 +55,7 @@
 .p{
     color: red;
 
+}
+.button{
+    width: 150px;
 }

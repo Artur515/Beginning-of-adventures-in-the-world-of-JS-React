@@ -12,11 +12,12 @@ const Setting = () => {
             <Grid columns={2} stackable>
                 <Grid.Row stretched>
                     <Grid.Column>
-                        <Segment className={style.first_segment}><Image
-                            src='https://react.semantic-ui.com/images/wireframe/square-image.png' size='medium'
-                            circular/><br/>
+                        <Segment className={style.first_segment}>
+                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png'
+                                   size='medium'
+                            /><br/>
                             <label>Change photo </label>
-                            <Button as="label" htmlFor="file" type="button" animated="fade">
+                            <Button as="label" htmlFor="file" type="button" animated="fade" className={style.button}>
                                 <Button.Content visible>
                                     <Icon name="file"/>
                                 </Button.Content>
