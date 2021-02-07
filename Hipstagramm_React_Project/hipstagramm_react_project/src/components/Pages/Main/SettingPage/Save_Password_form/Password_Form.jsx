@@ -1,4 +1,4 @@
-import {Button, Segment} from "semantic-ui-react";
+import {Button, Icon, Segment} from "semantic-ui-react";
 import style from "../style.module.css";
 import React, {useRef} from "react";
 import {useForm} from 'react-hook-form';
@@ -47,7 +47,13 @@ const Password = () => {
                         {errors.confirm_password && <p className={style.p}>{errors.confirm_password.message}</p>}
                     </div>
                 </div>
-               <Button size='large' fluid>Save password</Button>
+
+                <Button animated secondary>
+                    <Button.Content visible>Save password</Button.Content>
+                    <Button.Content hidden>
+                        <Icon name=' save'/>
+                    </Button.Content>
+                </Button>
             </form>
         </Segment>
     )

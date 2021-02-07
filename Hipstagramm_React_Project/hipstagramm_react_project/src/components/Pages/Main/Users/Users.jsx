@@ -1,14 +1,14 @@
 import {useDispatch, useSelector} from "react-redux";
-import {Button, Dimmer, Icon, Image, Input, Loader, Segment} from "semantic-ui-react";
+import {Button, Dimmer,  Image, Input, Loader, Segment} from "semantic-ui-react";
 import style from './style.module.css'
 import {connect} from 'react-redux';
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 ///написать клик за пределом
 
 
-const Users = () => {
+const Users = (props) => {
 
 
     const dispatch = useDispatch
@@ -26,7 +26,6 @@ const Users = () => {
         setFilterUsers(user)
     }
 
-
     if (allUsers !== null) {
         return (
             <div>
@@ -35,7 +34,7 @@ const Users = () => {
                     chooseUsers.map((user) => {
                             return (
                                 <div className={style.content} key={user._id}>
-                                    <Link to='/users/'><img src={user.avatar} alt="avatar"/></Link>
+                                    <NavLink to={'/users/:'}><img src={user.avatar} alt="avatar"/></NavLink>
                                     <Link><h3>{user.login}</h3></Link>
                                     <br/>
                                     {/*установить follow unfollow и поменять цвет*/}

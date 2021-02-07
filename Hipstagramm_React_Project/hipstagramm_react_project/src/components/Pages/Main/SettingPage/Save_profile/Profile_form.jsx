@@ -1,4 +1,4 @@
-import {Button, Grid, Segment} from "semantic-ui-react";
+import {Button, Grid, Icon, Segment} from "semantic-ui-react";
 import style from "../style.module.css";
 import React, {useState} from "react";
 import * as yup from "yup";
@@ -50,7 +50,12 @@ const Profile_form = () => {
                 <div className={style.p}>
                     {errors.email?.message}
                 </div>
-                <Button>Save profile</Button>
+                <Button animated secondary>
+                    <Button.Content visible>Save profile</Button.Content>
+                    <Button.Content hidden>
+                        <Icon name=' save'/>
+                    </Button.Content>
+                </Button>
             </form>
         </Segment>
     )
