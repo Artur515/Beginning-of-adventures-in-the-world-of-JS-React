@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
-import React, {useState} from "react";
+import React from "react";
 import style from './style.module.css'
-import {Button, Dimmer, Icon, Image, Item, Loader, Segment} from "semantic-ui-react";
+import {Button, Dimmer, Form, Icon, Image, Item, Loader, Segment, TextArea} from "semantic-ui-react";
 import Posts from "./Posts/Posts";
 
 
@@ -38,7 +38,9 @@ const Profile = () => {
                     </Item.Content>
                 </Item>
                 <div>
-                    <Posts/>
+                    <Form>
+                        <TextArea placeholder='Add post'/>
+                    </Form>
                     <Button animated secondary>
                         <Button.Content visible>Add post</Button.Content>
                         <Button.Content hidden>
@@ -47,7 +49,10 @@ const Profile = () => {
                     </Button>
                 </div>
                 <div className={style.line}></div>
-<div className={style.posts}></div>
+<div className={style.posts}>
+
+<Posts/>
+</div>
             </>
         )
     } else {
