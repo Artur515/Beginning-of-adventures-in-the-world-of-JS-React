@@ -17,6 +17,8 @@ export const loginCurrentUser = (login, password) => {
 }
 
 
+
+
 export const logOutCurrentUser = () => {
     localStorage.removeItem('currentUserToken')
 }

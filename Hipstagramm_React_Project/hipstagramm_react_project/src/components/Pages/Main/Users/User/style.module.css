@@ -1,0 +1,28 @@
+.info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.line {
+    border: 1px solid black;
+}
+
+.post {
+    border-bottom: 1px solid black;
+    margin: 7px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.name {
+    display: flex;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+}

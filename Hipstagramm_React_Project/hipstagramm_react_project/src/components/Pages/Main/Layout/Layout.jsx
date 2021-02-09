@@ -6,6 +6,7 @@ import Header from "../../../Header/Header";
 import Setting from "../SettingPage/Setting";
 import {Route, Switch} from "react-router-dom";
 import Users from "../Users/Users";
+import User_profile from "../Users/User/User_Profile";
 
 
 const Layout = () => {
@@ -20,6 +21,7 @@ const Layout = () => {
                             <Route exact path='/users' component={Users}></Route>
                             <Route path='/users/current' component={Profile}></Route>
                             <Route path='/users/setting' component={Setting}></Route>
+                            <Route path='/users/:id' component={User_profile}></Route>
                         </Switch>
                     </Segment>
                 </Container>
