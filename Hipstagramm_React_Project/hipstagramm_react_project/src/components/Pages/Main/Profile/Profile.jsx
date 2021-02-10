@@ -6,8 +6,13 @@ import Posts from "./Posts/Posts";
 
 
 const Profile = () => {
+const defaultAvatar='https://img1.picmix.com/output/stamp/normal/5/0/5/9/979505_7c404.png'
     const user = useSelector((store) => store.users.currentUser)
     console.log(user)
+    const handleAddPost = () => {
+
+    }
+
 
     if (user !== null) {
         const {login, avatar, id, email, posts, followers, following} = user
@@ -17,7 +22,7 @@ const Profile = () => {
                     <Item.Group relaxed>
                         <Item>
                             <Item.Image size='small'
-                                        src='https://img1.picmix.com/output/stamp/normal/5/0/5/9/979505_7c404.png'/>
+                                        src={avatar||defaultAvatar}/>
                             <Item.Content verticalAlign='middle'>
                                 <Item.Extra>
                                     <div className={style.info}>
@@ -38,21 +43,27 @@ const Profile = () => {
                     </Item.Content>
                 </Item>
                 <div>
-                    <Form>
+                    <Form className={style.form}>
                         <TextArea placeholder='Add post'/>
+                        <Button as="label" htmlFor="file" type="button" animated="fade" secondary>
+                            <Button.Content visible>
+                                <Icon name="send"/>
+                            </Button.Content>
+                            <Button.Content hidden>Add post</Button.Content>
+                        </Button><br/>
+                        <input
+                            type="file"
+                            id="file"
+                            hidden
+                            onChange={handleAddPost}
+                        />
                     </Form>
-                    <Button animated secondary>
-                        <Button.Content visible>Add post</Button.Content>
-                        <Button.Content hidden>
-                            <Icon name=' pencil alternate'/>
-                        </Button.Content>
-                    </Button>
                 </div>
                 <div className={style.line}></div>
-<div className={style.posts}>
+                <div className={style.posts}>
 
-<Posts/>
-</div>
+                    <Posts/>
+                </div>
             </>
         )
     } else {

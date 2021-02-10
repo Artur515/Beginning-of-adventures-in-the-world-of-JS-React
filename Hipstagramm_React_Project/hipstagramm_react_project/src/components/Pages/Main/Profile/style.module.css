@@ -17,3 +17,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.form{
+    display: flex;
+    flex-direction: column;
+}

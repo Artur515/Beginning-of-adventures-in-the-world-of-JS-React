@@ -10,14 +10,15 @@ import {yupResolver} from "@hookform/resolvers/yup";
 
 let schema = yup.object().shape({
     login: yup.string().required().min(2, 'Login is too short!').max(20, 'Login is too long!'),
-    first_name: yup.string().required().min(2, 'First name is too short!').max(20, 'First name is too long!'),
-    last_name: yup.string().required().min(2, 'Last name is too short!').max(20, 'Last name is too long!'),
+    firstName: yup.string().required().min(2, 'First name is too short!').max(20, 'First name is too long!'),
+    lastName: yup.string().required().min(2, 'Last name is too short!').max(20, 'Last name is too long!'),
     email: yup.string().required("Please enter email").email(),
 });
 
 
-const Profile_form = () => {
+const Profile_form = ({imageUser, defaulAvatar}) => {
 
+    console.log(imageUser.imagePreview)
     const {register, handleSubmit, errors} = useForm({
         resolver: yupResolver(schema),
     });
@@ -25,6 +26,16 @@ const Profile_form = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+        const {login, firstName, lastName, email} = data
+        const requestBody = {
+            login: login,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            avatar: imageUser.imagePreview || defaulAvatar
+        }
+
+
     }
 
     return (
@@ -36,12 +47,12 @@ const Profile_form = () => {
                     {errors.login?.message}
                 </div>
                 <label>First name</label>
-                <input type='text' placeholder='First name' name='first_name' className={style.input} ref={register}/>
+                <input type='text' placeholder='First name' name='firstName' className={style.input} ref={register}/>
                 <div className={style.p}>
                     {errors.first_name?.message}
                 </div>
                 <label>Last name</label>
-                <input type='text' placeholder='Last name' name='last_name' className={style.input} ref={register}/>
+                <input type='text' placeholder='Last name' name='lastName' className={style.input} ref={register}/>
                 <div className={style.p}>
                     {errors.last_name?.message}
                 </div>

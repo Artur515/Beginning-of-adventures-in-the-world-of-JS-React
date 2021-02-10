@@ -30,8 +30,8 @@ const Users = (props) => {
         return (
             <div>
                 <Input fluid icon='search' placeholder='Search...' onChange={handleSearch}/>
-                {
-                    chooseUsers.map((user) => {
+                {    
+                           chooseUsers.map((user) => {
                             return (
                                 <div className={style.content} key={user._id}>
                                     <NavLink to={'/users/:' + user._id}>
@@ -41,10 +41,11 @@ const Users = (props) => {
                                     {/*установить follow unfollow и поменять цвет*/}
                                     <Button basic color='blue' size='large'>Follow</Button>
                                 </div>
+
                             )
-                        },
-                    )
-                }
+                            },
+                                     )
+            }
             </div>
         )
     } else {
