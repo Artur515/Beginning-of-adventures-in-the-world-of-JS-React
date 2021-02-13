@@ -3,6 +3,7 @@ import React from "react";
 import style from './style.module.css'
 import {Button, Dimmer, Form, Icon, Image, Item, Loader, Segment, TextArea} from "semantic-ui-react";
 import Posts from "./Posts/Posts";
+import Preloader from "../../../../helpers/preloaders/Preloader";
 
 
 const Profile = () => {
@@ -68,12 +69,13 @@ const defaultAvatar='https://img1.picmix.com/output/stamp/normal/5/0/5/9/979505_
         )
     } else {
         return (
-            <Segment>
-                <Dimmer active inverted>
-                    <Loader size='large'>Loading</Loader>
-                </Dimmer>
-                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
-            </Segment>
+     <Preloader/>
+            // <Segment>
+            //     <Dimmer active inverted>
+            //         <Loader size='large'>Loading</Loader>
+            //     </Dimmer>
+            //     <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
+            // </Segment>
         )
     }
 }

@@ -1,0 +1,13 @@
+import './style.css'
+const Loader = () => {
+    return (
+        <div className="loader">
+            <div className="dash uno"></div>
+            <div className="dash dos"></div>
+            <div className="dash tres"></div>
+            <div className="dash cuatro"></div>
+        </div>
+    )
+}
+
+export default Loader
