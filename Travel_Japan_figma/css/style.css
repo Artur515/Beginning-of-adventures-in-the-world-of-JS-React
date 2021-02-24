@@ -3,58 +3,60 @@
     font-style: normal;
     font-weight: 400;
     src: local(''),
-    url('../fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('../fonts/lato-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* lato-700 - latin */
 @font-face {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
     src: local(''),
-    url('../fonts/lato-v17-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('../fonts/lato-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/lato-v17-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* lato-900 - latin */
 @font-face {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 900;
     src: local(''),
-    url('../fonts/lato-v17-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('../fonts/lato-v17-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/lato-v17-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /*вот так рекомендасьен!!!*/
-html{
+html {
     box-sizing: border-box;
 }
-*,*::before,*::after{
-box-sizing: inherit;
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
-body{
+
+body {
     font-family: 'Lato';
     font-style: normal;
     font-size: 16px;
     line-height: 1.2;
     font-weight: normal;
-    color: #102746;
-;
+    color: #102746;;
 }
 
 
-.wrapper{
+.wrapper {
     max-width: 1060px;
     margin: 0 auto;
 }
-.header{
-    background-color: black;
+
+/*header styles start*/
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-.header_wrapper{
+.header_wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -62,24 +64,99 @@ body{
     padding-top: 56px;
 }
 
-.header_list{
+.header_list {
     display: flex;
     flex-wrap: wrap;
 
 }
-.header_item{
+
+.header_item {
     margin-right: 82px;
 }
+
 .header_item:last-child {
     margin-right: 0;
 }
 
-.header_link{
+.header_link {
     font-size: 18px;
     line-height: 24px;
     color: white;
     text-decoration: none;
 }
-.header_link:hover,.header_link:focus,.header_link:active{
-opacity: .75;
+
+.header_link:hover, .header_link:focus, .header_link:active {
+    opacity: .75;
 }
+
+
+/*header end*/
+
+
+/*intro style start*/
+.intro {
+    min-height: 100vh;
+    background: url(../img/Hero_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding-top: 263px;
+}
+
+.intro_title {
+    max-width: 619px;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    margin-bottom: 22px;
+}
+
+.intro_subtitle {
+    max-width: 546px;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 59px;
+}
+
+.search_form_info {
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.search_form_field {
+    width: 297px;
+    background: transparent url(../img/svg/Oval.svg) no-repeat left 6px;
+    background-size: 20px;
+    border: 0;
+    border-bottom: 2px solid #BFC0C5;
+    margin-right: 60px;
+    padding-left: 43px;
+    padding-bottom: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search_form_field::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search_form_submit {
+    padding: 15px 39px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    background: #1B7DFF;
+    border: 0;
+}
+
+.search_form_submit:hover, search_form_submit:focus, search_form_submit:active {
+    background: #0046a2;
+}
+
+/*intro style end*/
