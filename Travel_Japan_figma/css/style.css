@@ -274,7 +274,7 @@ img {
 
 
 /*places start*/
-.places{
+.places {
     margin-bottom: 131px;
 }
 
@@ -308,16 +308,18 @@ img {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
 }
-.places_card{
+
+.places_card {
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 
 }
-.places_card:hover .places_card_picture{
+
+.places_card:hover .places_card_picture {
     transform: scale(1.05);
 }
 
-.places_card::after{
+.places_card::after {
     display: block;
     content: '';
     width: 100%;
@@ -329,7 +331,7 @@ img {
     z-index: 2;
 }
 
-.places_card_title{
+.places_card_title {
     font-size: 50px;
     line-height: 60px;
     color: white;
@@ -352,16 +354,19 @@ img {
     width: 100%;
     transition: .15s;
 }
-.places_card_size_large{
+
+.places_card_size_large {
     height: 354px;
     object-fit: cover;
 }
-.places_card_picture_size_small{
+
+.places_card_picture_size_small {
     height: 283px;
     object-fit: cover;
 
 }
-.places_card_link{
+
+.places_card_link {
     position: absolute;
     top: 0;
     left: 0;
@@ -372,3 +377,138 @@ img {
 
 
 /*places end*/
+
+
+/*tours start*/
+
+.tours {
+    margin-bottom: 139px;
+}
+
+.tours_tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 108px;
+    align-items: center;
+    margin-bottom: 77px;
+}
+
+.tour_info {
+    padding-left: 47px;
+}
+
+.tour_title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 85px;
+}
+
+.tour_desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 58px;
+}
+
+.tour_more {
+    font-size: 16px;
+    color: #1B7DFF;
+    text-decoration: none;
+    background: url(../img/svg/Shape.svg) no-repeat right center;
+    padding-right: 59px;
+}
+
+.tour_more:hover, .tour_more:focus {
+    opacity: .55;
+}
+
+/*tours end*/
+
+
+/*top start*/
+.top {
+    margin-bottom: 86px;
+}
+
+.top_card {
+    display: flex;
+    flex-direction: column;
+}
+
+.top_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 57px;
+
+}
+
+.top_title {
+    margin-bottom: 54px
+}
+
+.top_card_picture {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.top_card_stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(21, 24, 36, 0.6);
+    padding: 16px 25px;
+}
+
+.top_card_title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    margin: 0 auto 0 0;
+}
+
+.top_card_likes {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    padding-right: 20px;
+    background: url(../img/svg/heart.svg) no-repeat right;
+    background-size: 16px;
+    margin-right: 14px;
+}
+
+.top_card_comments {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    padding-right: 23px;
+    background: url(../img/svg/comment.svg) no-repeat right;
+}
+
+.top_card_desc {
+    margin-bottom: 31px;
+}
+
+.top_card_more {
+    width: 118px;
+    padding: 12px 19px;
+    background: #006DFE;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin: auto 0 0 0;
+
+}
+
+.top_card_more:hover, .top_card_more:focus, .top_card_more:active {
+    background: #1B7DFF;
+}
+
+/*top end*/
