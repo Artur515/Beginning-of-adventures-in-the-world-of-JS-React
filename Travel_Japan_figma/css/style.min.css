@@ -1,73 +1,59 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 @font-face {
-    font-family: 'Lato';
+    font-family: Lato;
     font-style: normal;
     font-weight: 400;
-    src: local(''),
-    url('../fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: local(""),
+        url(../fonts/lato-v17-latin-regular.woff2) format("woff2"),
+        url(../fonts/lato-v17-latin-regular.woff) format("woff");
 }
-
-/* lato-700 - latin */
 @font-face {
-    font-family: 'Lato';
+    font-family: Lato;
     font-style: normal;
     font-weight: 700;
-    src: local(''),
-    url('../fonts/lato-v17-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: local(""),
+        url(../fonts/lato-v17-latin-700.woff2) format("woff2"),
+        url(../fonts/lato-v17-latin-700.woff) format("woff");
 }
-
-/* lato-900 - latin */
 @font-face {
-    font-family: 'Lato';
+    font-family: Lato;
     font-style: normal;
     font-weight: 900;
-    src: local(''),
-    url('../fonts/lato-v17-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/lato-v17-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: local(""),
+        url(../fonts/lato-v17-latin-900.woff2) format("woff2"),
+        url(../fonts/lato-v17-latin-900.woff) format("woff");
 }
-
-/*вот так рекомендасьен!!!*/
 html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-*, *::before, *::after {
+*,
+::after,
+::before {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
 }
-
 body {
-    font-family: 'Lato';
+    font-family: Lato;
     font-style: normal;
     font-size: 16px;
     line-height: 1.2;
-    font-weight: normal;
-    color: #102746;;
+    font-weight: 400;
+    color: #102746;
 }
-
 img {
     max-width: 100%;
     height: auto;
 }
-
 .wrapper {
     max-width: 1060px;
     margin: 0 auto;
     padding: 0 15px;
 }
-
 .wrapper_full {
     max-width: 1262px;
     margin: 0 auto;
     padding: 0 15px;
 }
-
 .section_title {
     font-weight: 500;
     font-size: 35px;
@@ -75,35 +61,30 @@ img {
     position: relative;
     padding-bottom: 10px;
 }
-
 .section_title::after {
     display: block;
-    content: '';
+    content: "";
     width: 253px;
     height: 3px;
-    background-color: #1B7DFF;
+    background-color: #1b7dff;
     position: absolute;
     bottom: 0;
     left: 0;
 }
-
-/*header styles start*/
 .header_active {
-    background: #0E1D28;
+    background: #0e1d28;
 }
-
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    -webkit-transition: .2s linear;
-    -o-transition: .2s linear;
-    transition: .2s linear;
+    -webkit-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    transition: 0.2s linear;
     padding-bottom: 20px;
     z-index: 999;
 }
-
 .header_wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -118,73 +99,56 @@ img {
     justify-content: space-between;
     padding-top: 56px;
 }
-
 .header_list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-
 }
-
 .header_item {
     margin-right: 82px;
 }
-
 .header_item:last-child {
     margin-right: 0;
 }
-
 .header_link {
     font-size: 18px;
     line-height: 24px;
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
-
-.header_link:hover, .header_link:focus, .header_link:active {
-    opacity: .75;
+.header_link:active,
+.header_link:focus,
+.header_link:hover {
+    opacity: 0.75;
 }
-
-
-/*header_burger*/
 .header_burger {
     width: 40px;
     height: 28px;
     position: relative;
     display: none;
 }
-
 .burger_line {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: #fff;
     position: absolute;
     left: 0;
-
 }
-
 .burger_line_first {
     top: 0;
 }
-
 .burger_line_second {
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
-
 .burger_line_third {
     bottom: 0;
 }
-
-/*header end*/
-
-
-/*intro style start*/
 .intro {
     min-height: 100vh;
     background: url(../img/Hero_bg-min.jpg) no-repeat center;
@@ -192,109 +156,92 @@ img {
     padding-top: 263px;
     padding-bottom: 223px;
 }
-
 .intro_title {
     max-width: 619px;
     font-weight: 500;
     font-size: 50px;
     line-height: 60px;
-    color: white;
+    color: #fff;
     margin-bottom: 22px;
 }
-
 .intro_subtitle {
     max-width: 546px;
-    color: white;
+    color: #fff;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 59px;
 }
-
 .search_form_info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-
-
 }
-
 .search_form_field {
     width: 297px;
-    background: transparent url(../img/svg/Oval.svg) no-repeat left 6px;
+    background: transparent url(../img/svg/Oval.svg) no-repeat left
+        6px;
     background-size: 20px;
     border: 0;
-    border-bottom: 2px solid #BFC0C5;
+    border-bottom: 2px solid #bfc0c5;
     margin-right: 60px;
     padding-left: 43px;
     padding-bottom: 22px;
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #fff;
 }
-
 .search_form_field::-webkit-input-placeholder {
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #fff;
 }
-
 .search_form_field::-moz-placeholder {
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #fff;
 }
-
 .search_form_field:-ms-input-placeholder {
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #fff;
 }
-
 .search_form_field::-ms-input-placeholder {
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #fff;
 }
-
 .search_form_field::placeholder {
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #fff;
 }
-
 .search_form_submit {
     padding: 15px 39px;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 24px;
-    color: white;
-    background: #1B7DFF;
+    color: #fff;
+    background: #1b7dff;
     border: 0;
 }
-
-.search_form_submit:hover, search_form_submit:focus, search_form_submit:active {
+.search_form_submit:hover,
+search_form_submit:active,
+search_form_submit:focus {
     background: #0046a2;
 }
-
-/*intro style end*/
-
-
-/*benefits start*/
 .benefits {
     margin-bottom: 131px;
 }
-
 .benefits_wrap {
     max-width: 1262px;
-    background-color: white;
+    background-color: #fff;
     margin: 0 auto;
-    -webkit-box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
-    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    -webkit-box-shadow: 0 2px 20px rgba(21, 24, 36, 0.15993);
+    box-shadow: 0 2px 20px rgba(21, 24, 36, 0.15993);
     position: relative;
 }
-
 .benefits_title {
     width: 100%;
     font-weight: 500;
@@ -307,10 +254,8 @@ img {
     -webkit-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     transform: translateY(-100%);
-    background-color: white;
-
+    background-color: #fff;
 }
-
 .benefits_cards {
     display: -ms-grid;
     display: grid;
@@ -318,64 +263,49 @@ img {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 55px;
     padding: 0 100px;
-
 }
-
 .benefits_card {
     -ms-grid-column-span: 1;
     grid-column: span 1;
     margin-bottom: 112px;
 }
-
 .benefits_card_ico {
     max-width: 66px;
     margin-bottom: 37px;
-
 }
-
 .benefits_card_thumb {
     display: block;
 }
-
 .benefits_card_title {
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 26px;
 }
-
 .benefits_card_desc {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 39px;
 }
-
 .benefits_card_more {
     display: inline-block;
     padding-right: 59px;
     font-size: 16px;
     line-height: 24px;
-    color: #1B7DFF;
+    color: #1b7dff;
     text-decoration: none;
     background: url(../img/svg/Shape.svg) no-repeat 95% center;
-    -webkit-transition: .2s all;
-    -o-transition: .2s all;
-    transition: .2s all;
-
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
 }
-
-.benefits_card_more:hover, benefits_card_more:focus {
+.benefits_card_more:hover,
+benefits_card_more:focus {
     background: url(../img/svg/Shape.svg) no-repeat right center;
 }
-
-/*benefits end*/
-
-
-/*places start*/
 .places {
     margin-bottom: 131px;
 }
-
 .places_caption {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -390,24 +320,20 @@ img {
     justify-content: space-between;
     margin-bottom: 36px;
 }
-
 .places_title {
     margin-right: 15px;
 }
-
 .places_view_all {
     font-size: 16px;
-    color: #1B7DFF;
+    color: #1b7dff;
     text-decoration: none;
     background: url(../img/svg/Shape.svg) no-repeat right center;
     padding-right: 59px;
-
 }
-
-.places_view_all:hover, .places_view_all:focus {
-    opacity: .55;
+.places_view_all:focus,
+.places_view_all:hover {
+    opacity: 0.55;
 }
-
 .places_cards {
     display: -ms-grid;
     display: grid;
@@ -416,22 +342,18 @@ img {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
-
 .places_card {
     position: relative;
     overflow: hidden;
-
 }
-
 .places_card:hover .places_card_picture {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
-
 .places_card::after {
     display: block;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     background-color: rgba(21, 24, 36, 0.4);
@@ -440,48 +362,39 @@ img {
     top: 0;
     z-index: 2;
 }
-
 .places_card_title {
     font-size: 50px;
     line-height: 60px;
-    color: white;
+    color: #fff;
     position: absolute;
     bottom: 27px;
     left: 29px;
     z-index: 3;
 }
-
 .places_card_size_large {
     -ms-grid-column-span: 3;
     grid-column: span 3;
 }
-
 .places_card_size_small {
     -ms-grid-column-span: 2;
     grid-column: span 2;
 }
-
-
 .places_card_picture {
     width: 100%;
-    -webkit-transition: .15s;
-    -o-transition: .15s;
-    transition: .15s;
+    -webkit-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
 }
-
 .places_card_size_large {
     height: 354px;
     -o-object-fit: cover;
     object-fit: cover;
 }
-
 .places_card_picture_size_small {
     height: 283px;
     -o-object-fit: cover;
     object-fit: cover;
-
 }
-
 .places_card_link {
     position: absolute;
     top: 0;
@@ -490,17 +403,9 @@ img {
     height: 100%;
     z-index: 4;
 }
-
-
-/*places end*/
-
-
-/*tours start*/
-
 .tours {
     margin-bottom: 139px;
 }
-
 .tours_tour {
     display: -ms-grid;
     display: grid;
@@ -512,44 +417,34 @@ img {
     align-items: center;
     margin-bottom: 77px;
 }
-
 .tour_info {
     padding-left: 47px;
 }
-
 .tour_title {
     font-weight: 500;
     font-size: 30px;
     line-height: 40px;
     margin-bottom: 85px;
 }
-
 .tour_desc {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 58px;
 }
-
 .tour_more {
     font-size: 16px;
-    color: #1B7DFF;
+    color: #1b7dff;
     text-decoration: none;
     background: url(../img/svg/Shape.svg) no-repeat right center;
     padding-right: 59px;
 }
-
-.tour_more:hover, .tour_more:focus {
-    opacity: .55;
+.tour_more:focus,
+.tour_more:hover {
+    opacity: 0.55;
 }
-
-/*tours end*/
-
-
-/*top start*/
 .top {
     margin-bottom: 86px;
 }
-
 .top_card {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -561,7 +456,6 @@ img {
     -ms-grid-column-span: 2;
     grid-column: span 2;
 }
-
 .top_cards {
     display: -ms-grid;
     display: grid;
@@ -569,18 +463,14 @@ img {
     grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 57px;
     grid-row-gap: 57px;
-
 }
-
 .top_title {
-    margin-bottom: 54px
+    margin-bottom: 54px;
 }
-
 .top_card_picture {
     position: relative;
     margin-bottom: 45px;
 }
-
 .top_card_stats {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -600,7 +490,6 @@ img {
     background: rgba(21, 24, 36, 0.6);
     padding: 16px 25px;
 }
-
 .top_card_title {
     font-weight: 500;
     font-size: 18px;
@@ -608,64 +497,52 @@ img {
     color: #fff;
     margin: 0 auto 0 0;
 }
-
 .top_card_likes {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: white;
+    color: #fff;
     padding-right: 20px;
     background: url(../img/svg/heart.svg) no-repeat right;
     background-size: 16px;
     margin-right: 14px;
 }
-
 .top_card_comments {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: white;
+    color: #fff;
     padding-right: 23px;
     background: url(../img/svg/comment.svg) no-repeat right;
 }
-
 .top_card_desc {
     margin-bottom: 31px;
 }
-
 .top_card_more {
     width: 118px;
     padding: 12px 19px;
-    background: #006DFE;
+    background: #006dfe;
     text-decoration: none;
-    color: white;
+    color: #fff;
     font-size: 16px;
     margin: auto 0 0 0;
-
 }
-
-.top_card_more:hover, .top_card_more:focus, .top_card_more:active {
-    background: #1B7DFF;
+.top_card_more:active,
+.top_card_more:focus,
+.top_card_more:hover {
+    background: #1b7dff;
 }
-
-/*top end*/
-
-
-/*videos start*/
 .videos {
     width: 100%;
 }
-
 .videos_wrapper {
     max-width: 1440px;
     margin: 0 auto;
     position: relative;
 }
-
 .video_item {
     padding-top: 56.25%;
 }
-
 .video_element {
     position: absolute;
     top: 0;
@@ -673,30 +550,20 @@ img {
     width: 100%;
     height: 100%;
 }
-
-/*videos end*/
-
-
-/*footer start*/
-
 .footer {
-    background: #0E1D28;
+    background: #0e1d28;
     padding: 119px 0;
 }
-
 .footer_item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-
 }
-
 .footer_logo {
     width: 50%;
 }
-
 .footer_nav {
     width: 50%;
     display: -webkit-box;
@@ -708,158 +575,125 @@ img {
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
-
 .footer_menu_title {
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    color: white;
+    color: #fff;
 }
-
 .footer_menu_link {
     font-size: 16px;
     line-height: 24px;
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
-
-.footer_menu_link:hover, .footer_menu_link:focus, .footer_menu_link:active {
-    opacity: .75;
+.footer_menu_link:active,
+.footer_menu_link:focus,
+.footer_menu_link:hover {
+    opacity: 0.75;
 }
-
-
-/*footer end*/
-
-
-/*Media start*/
-
-@media screen  and (max-width: 960px) {
+@media screen and (max-width: 960px) {
     .benefits {
         margin-bottom: 65px;
     }
-
     .benefits_card {
         margin-bottom: 60px;
     }
-
     .search_form_field {
         margin-bottom: 25px;
     }
-
     .benefits_cards {
         padding: 0 15px;
         grid-column-gap: 35px;
     }
-
     .benefits_title {
         padding: 55px 15px;
     }
-
     .benefits_wrap {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-
     .places_card_size_large {
         -ms-grid-column-span: 6;
         grid-column: span 6;
     }
-
     .places_card_size_small {
         -ms-grid-column-span: 6;
         grid-column: span 6;
     }
-
     .tours_tour {
         grid-column-gap: 35px;
     }
-
     .tour_info {
         padding-left: 0;
     }
-
     .tour_title {
         margin-bottom: 15px;
     }
-
     .tour_desc {
         margin-bottom: 15px;
     }
-
     .top_cards {
         grid-column-gap: 25px;
         grid-row-gap: 50px;
     }
-
     .top_card {
         -ms-grid-column-span: 3;
         grid-column: span 3;
     }
-
     .top_card_picture {
         margin-bottom: 25px;
     }
-
     .footer {
         padding: 60px;
     }
 }
-
 @media screen and (max-width: 767px) {
     .section_title {
         margin-bottom: 25px;
     }
-
     .section_title::after {
         width: 78px;
     }
-
     .header_burger {
-        display: block
+        display: block;
     }
-
     .header_wrapper {
         padding-top: 28px;
     }
-
     .header_nav {
         width: 100%;
         height: 100%;
         position: fixed;
         top: 0;
         left: 0;
-        background-color: black;
+        background-color: #000;
         z-index: 10;
         padding: 75px;
         -webkit-transform: translateX(100%);
         -ms-transform: translateX(100%);
         transform: translateX(100%);
-        -webkit-transition: .2s all linear;
-        -o-transition: .2s all linear;
-        transition: .2s all linear;
+        -webkit-transition: 0.2s all linear;
+        -o-transition: 0.2s all linear;
+        transition: 0.2s all linear;
     }
-
     .header_nav_active {
         -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
         transform: translateX(0);
     }
-
     .header_item {
         width: 100%;
         margin-right: 0;
         margin-bottom: 30px;
     }
-
     .header_item:last-child {
         margin-bottom: 0;
     }
-
     .header_link {
         font-size: 42px;
         line-height: 48px;
     }
-
     .header_nav_close {
         width: 40px;
         height: 40px;
@@ -868,168 +702,134 @@ img {
         right: 20px;
         z-index: 11;
     }
-
     .header_nav_close_line {
         display: block;
         width: 100%;
         height: 2px;
-        background-color: white;
+        background-color: #fff;
         position: absolute;
         top: 50%;
     }
-
     .header_nav_close_line:first-child {
         -webkit-transform: translateY(-50%) rotate(45deg);
         -ms-transform: translateY(-50%) rotate(45deg);
         transform: translateY(-50%) rotate(45deg);
     }
-
     .header_nav_close_line:last-child {
         -webkit-transform: translateY(-50%) rotate(-45deg);
         -ms-transform: translateY(-50%) rotate(-45deg);
         transform: translateY(-50%) rotate(-45deg);
     }
-
     .intro {
         padding-top: 120px;
     }
-
     .intro_title {
         font-size: 32px;
         line-height: 48px;
     }
-
     .intro_subtitle {
         font-size: 14px;
     }
-
     .search_form_field {
         margin-right: 0;
         width: 100%;
         padding-bottom: 12px;
-        background: transparent url(../img/svg/Oval.svg) no-repeat left 2px;
+        background: transparent url(../img/svg/Oval.svg) no-repeat
+            left 2px;
     }
-
     .search_form_field::-webkit-input-placeholder {
         font-size: 16px;
     }
-
     .search_form_field::-moz-placeholder {
         font-size: 16px;
     }
-
     .search_form_field:-ms-input-placeholder {
         font-size: 16px;
     }
-
     .search_form_field::-ms-input-placeholder {
         font-size: 16px;
     }
-
     .search_form_field::placeholder {
         font-size: 16px;
     }
-
     .search_form_submit {
         width: 100%;
     }
-
     .benefits {
         margin-bottom: 36px;
     }
-
     .benefits_card {
         -ms-grid-column-span: 3;
         grid-column: span 3;
         margin-bottom: 40px;
     }
-
     .benefits_card_ico {
         margin-bottom: 20px;
     }
-
     .benefits_title {
         margin-bottom: 12px;
     }
-
     .benefits_card_desc {
         margin-bottom: 20px;
     }
-
     .places_view_all {
         margin-bottom: 24px;
     }
-
     .places_caption {
         margin-bottom: 0;
     }
-
-    .places_card_picture_size_large, .places_card_picture_size_small {
+    .places_card_picture_size_large,
+    .places_card_picture_size_small {
         height: 230px;
     }
-
     .places {
         margin-bottom: 76px;
     }
-
-    .tour_picture, .tour_info {
+    .tour_info,
+    .tour_picture {
         -ms-grid-column-span: 2;
         grid-column: span 2;
     }
-
     .tour_picture {
         margin-bottom: 12px;
     }
-
     .tour_picture_mobile_first {
         -ms-grid-row: -1;
         grid-row-start: -1;
     }
-
     .tours_tour {
         margin-bottom: 50px;
     }
-
     .tours {
         margin-bottom: 76px;
     }
-
     .top_card {
         -ms-grid-column-span: 6;
         grid-column: span 6;
     }
-
     .top_card_desc {
         margin-bottom: 15px;
     }
-
     .top_card_stats {
         max-width: 386px;
     }
-
     .top {
         margin-bottom: 76px;
     }
-
     .footer_logo {
         width: 100%;
         margin-bottom: 20px;
     }
-
     .footer_nav {
         width: 100%;
     }
-
     .footer_menu {
         width: 50%;
         margin-bottom: 20px;
     }
 }
-
 @media screen and (max-width: 500px) {
     .header_nav {
         padding: 75px 30px;
     }
 }
-
-/*Media end */
