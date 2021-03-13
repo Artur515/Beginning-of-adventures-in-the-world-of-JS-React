@@ -12,6 +12,8 @@ $(document).ready(function () {
     });
 });
 
+
+
 (function () {
 
     const smoothScroll = function (targetEl, duration) {
