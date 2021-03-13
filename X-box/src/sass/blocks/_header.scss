@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  background: #373A3C;
+  border-radius: 4px;
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0 22px 15px;
+  }
+
+  &_list {
+    a {
+      padding: 0 26px 0 26px;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+  }
+
+
+  &_list {
+
+    a:hover {
+      transition: linear .3s;
+      color: white;
+    }
+  }
+
+  &_input {
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+
+}
