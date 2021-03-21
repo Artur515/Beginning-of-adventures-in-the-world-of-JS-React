@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>MacOutlet</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="wrapper">
+
+    <header class="header">
+        <a href="#!" class="logo_link"><h1 class="logo">MacOutlet</h1></a>
+        <a href="#!"><img src="./img/icons/cart.svg" alt="logo_basket" class="basket_logo"></a>
+    </header>
+    <main class="main">
+        <!--banner start-->
+        <div class="slider_banner">
+            <div class="slider_item">
+                <img src="./img/banners/air_pods_max_banner.jpg" alt="banner">
+            </div>
+            <div class="slider_item">
+                <img src="./img/banners/airpods_pro_banner.png" alt="banner">
+            </div>
+            <div class="slider_item">
+                <img src="./img/banners/ipad_air_banner.jpg" alt="banner">
+            </div>
+            <div class="slider_item">
+                <img src="./img/banners/iphone_12_banner.jpg" alt="banner">
+            </div>
+            <div class="slider_item">
+                <img src="./img/banners/mac_book_banner.jpg" alt="banner">
+            </div>
+            <div class="slider_item">
+                <img src="./img/banners/watch_banner.jpg" alt="banner">
+            </div>
+            <!--<div class="prev"><</div>-->
+            <!--<div class="next">></div>-->
+        </div>
+        <!--banner end-->
+
+        <div class="search_area">
+            <input type="text" placeholder="Enter device name..." class="search_input">
+            <div class="search_setting"><img src="./img/icons/settings.svg" alt=""></div>
+            <div class="search_sort"><img src="./img/icons/filter.svg" alt=""></div>
+            <div class="search_sort_menu hide">
+                <select class="search_sort_select">
+                    <option value="down">expensive</option>
+                    <option value="up">cheaper</option>
+                    <option value="default">default</option>
+                </select>
+            </div>
+        </div>
+        <section class="search_cards">
+            <div class="search_panel hide">
+                <button class="accordion ">Price</button>
+                <div class="panel price">
+                    <div class="from">
+                        <label>From</label>
+                        <input class="search_from " type="text">
+                        <label>To</label>
+                        <input class="search_to" type="text">
+                    </div>
+                </div>
+                <button class="accordion ">Color</button>
+                <div class="panel color">
+                    <div>
+                        <label>Red</label>
+                        <input class="color_input" name="Red" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>Black</label>
+                        <input class="color_input" name="Black" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>Blue</label>
+                        <input class="color_input" name="Pacific Blue" type='checkbox'></div>
+                    <div>
+                        <label>Gold</label>
+                        <input class="color_input" name="Gold" type='checkbox'></div>
+                    <div>
+                        <label>Green</label>
+                        <input class="color_input" name="Green" type='checkbox'>
+
+                    </div>
+                    <div>
+                        <label>White</label>
+                        <input class="color_input" name="White" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>Grey</label>
+                        <input class="color_input" name="Space Grey" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>Yellow</label>
+                        <input class="color_input" name="Yellow" type='checkbox'>
+                    </div>
+                </div>
+                <button class="accordion ">Memory</button>
+                <div class="panel memory">
+                    <div>
+                        <label>32 gb</label>
+                        <input name="32" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>64 Gb</label>
+                        <input name="64" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>128 Gb</label>
+                        <input name="128" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>256 Gb</label>
+                        <input name="256" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>512 Gb</label>
+                        <input name="512" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>1 TB</label>
+                        <input name="1" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>2 TB</label>
+                        <input name="2" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>4 TB</label>
+                        <input name="4" type='checkbox'>
+                    </div>
+                </div>
+                <button class="accordion ">OS</button>
+                <div class="panel os">
+                    <div>
+                        <label>IOS</label>
+                        <input name="ios" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>Mac OS</label>
+                        <input name="mac" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>TV OS</label>
+                        <input name="tv" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>Watch OS</label>
+                        <input name="watch" type='checkbox'>
+                    </div>
+                </div>
+                <button class="accordion ">Display</button>
+                <div class="panel display">
+                    <div>
+                        <label>2-5 inch</label>
+                        <input name="2inch" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>5-7 inch</label>
+                        <input name="5inch" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>7-12 inch</label>
+                        <input name="7inch" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>12-16 inch</label>
+                        <input name="12inch" type='checkbox'>
+                    </div>
+                    <div>
+                        <label>+16 inch</label>
+                        <input name="16inch" type='checkbox'>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+
+            </div>
+        </section>
+
+    </main>
+</div>
+<script src="js/script.js" type="module"></script>
+</body>
+</html>

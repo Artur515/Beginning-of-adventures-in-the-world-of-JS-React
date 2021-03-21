@@ -1,4 +1,7 @@
 import { pizzaList } from "/list.js";
+
+console.log(pizzaList);
+
 const basketArr = [];
 const renderCard = (item) => {
     const card = document.createElement("div");
