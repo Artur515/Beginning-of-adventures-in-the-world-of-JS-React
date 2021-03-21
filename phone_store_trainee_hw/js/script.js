@@ -64,13 +64,17 @@ for (let i = 0; i < accordion.length; i++) {
     });
 }
 // accordion end
+
+
+//create card
 const createCard = (item) => {
     const card = document.createElement('div')
     card.className = 'apple_card'
+    card.id = "myBtnCard"
     // const button = document.createElement("button");
     // button.innerText = "Add to cart";
     card.innerHTML = `
-<img class="card_img" src="${item.imgUrl}">
+<img class="card_img" src="${item.imgUrl}" alt="apple_img">
 <h3>${item.name}</h3>
 <span>${item.orderInfo.inStock} left in stock</span>
 <span>Price:${item.price}$</span>
@@ -92,8 +96,37 @@ const renderCard = (data = items) => {
     })
 }
 
-
 renderCard(items)
+
+
+// const createModalCard = (item) => {
+//     const modalCard = document.createElement('div')
+//     modalCard.className = 'modal '
+//     modalCard.id = 'myModal'
+//     modalCard.innerHTML = `
+// <div class="modal_content>
+//
+//
+//     <div class="modal_img"><img src="${item.imgUrl}" alt="apple_img"></div>
+//     <div class="modal_content">
+//     <h3>${item.name}</h3>
+//     <p>Color:${item.color}</p>
+//     <p>Operation System:${item.os}</p>
+//     <p>Chip:${item.chip.name}</p>
+//     <p>Height:${item.size.height}</p>
+//     <p>Width:${item.size.width}</p>
+//     <p>Depth:${item.size.depth}</p>
+//     <p>Weigth:${item.size.weight}</p>
+// </div>
+//     <div class="modal_price">
+//     <h2>${item.price}</h2>
+//     <p>Stock:${item.orderInfo.inStock}</p>
+//     <button class="btn">Add to cart</button>
+// </div>
+// </div>
+//     `
+// }
+
 
 const btn = document.querySelector('.btn')
 
@@ -174,30 +207,124 @@ document.querySelector('.search_from').oninput = searchPrice
 
 //searchColor
 
+
 const searchColor = () => {
-
-    let color = []
-    const colorCheckbox = document.querySelectorAll('.color_input')
-    colorCheckbox.forEach((checkItem) => {
-        if (checkItem.checked == true) {
-            color.push(checkItem.name)
+    let result
+    document.querySelectorAll('.color_input').forEach((item) => {
+        if (item.checked == true) {
+            return result = items.filter((col) => {
+                return col.color.includes(item.name)
+            })
         }
-        return color
+        return result
     })
-    console.log(color)
-
-    let resultFilter = items.filter(item => item.color.some(i => color.includes(i)))
-
 
     setTimeout(() => {
-        renderCard(resultFilter)
+        renderCard(result)
     }, 500)
 }
-//need to finish
+
 document.querySelectorAll('.color_input').forEach((item) => {
     item.onchange = searchColor
 })
 
+//old  search_script
 
+// const searchColor = () => {
 //
+//     let color = []
+//     const colorCheckbox = document.querySelectorAll('.color_input')
+//     colorCheckbox.forEach((checkItem) => {
+//         if (checkItem.checked == true) {
+//             color.push(checkItem.name)
+//         }
+//         return color
+//     })
+//     console.log(color)
+//
+//     let resultFilter = items.filter(item => item.color.some(i => color.includes(i)))
+//
+//
+//     setTimeout(() => {
+//         renderCard(resultFilter)
+//     }, 500)
+// }
+//
+//
+//
+//
+// //need to finish to fix
+// document.querySelectorAll('.color_input').forEach((item) => {
+//     item.onchange = searchColor
+// })
 
+
+//find storage
+
+
+const searchStorage = () => {
+    let result
+    document.querySelectorAll('.storage').forEach((item) => {
+        if (item.checked == true) {
+            return result = items.filter((card) => {
+                return card.storage == item.name
+            })
+        }
+        return result
+    })
+
+    setTimeout(() => {
+        renderCard(result)
+    }, 500)
+}
+
+document.querySelectorAll('.storage').forEach((item) => {
+    item.onchange = searchStorage
+})
+
+//search OS
+
+
+const searchOS = () => {
+    let result
+    document.querySelectorAll('.panel_os').forEach((item) => {
+        if (item.checked == true) {
+            return result = items.filter((card) => {
+                return card.os == item.name
+            })
+        }
+        return result
+    })
+
+    setTimeout(() => {
+        renderCard(result)
+    }, 500)
+
+}
+
+
+document.querySelectorAll('.panel_os').forEach((item) => {
+    item.onchange = searchOS
+})
+
+
+//search display
+
+const searchDisplay = () => {
+    let result
+    document.querySelectorAll('.display').forEach((item) => {
+        if (item.checked ==true&&item.value==2) {
+            return result = items.filter((card) => {
+                if (card.display <= item.value) {
+                    return card
+                }
+            })
+        }
+        return console.log(result)
+    })
+
+}
+
+document.querySelector('.check').addEventListener('click', () => {
+    searchDisplay()
+})
