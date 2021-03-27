@@ -1,0 +1,76 @@
+@import 'libs/bootstrap-reboot.min';
+
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+  url('../fonts/lato-v17-latin-regular.woff2') format('woff2'),
+  url('../fonts/lato-v17-latin-regular.woff') format('woff');
+}
+
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+  url('../fonts/lato-v17-latin-700.woff2') format('woff2'),
+  url('../fonts/lato-v17-latin-700.woff') format('woff');
+}
+
+/* lato-900 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local(''),
+  url('../fonts/lato-v17-latin-900.woff2') format('woff2'),
+  url('../fonts/lato-v17-latin-900.woff') format('woff');
+}
+
+
+/*вот так рекомендасьен!!!*/
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: normal;
+  color: #102746;;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import "base/static";
+@import "blocks/header";
+@import "base/burger";
+@import "blocks/intro";
+@import "blocks/intro_search";
+@import "blocks/benefits";
+@import "blocks/places";
+@import "blocks/tours";
+@import "blocks/top_visit";
+@import "blocks/video";
+@import "blocks/footer";
+@import "blocks/media";

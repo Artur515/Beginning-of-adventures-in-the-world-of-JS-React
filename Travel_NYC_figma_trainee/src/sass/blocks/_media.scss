@@ -1,0 +1,284 @@
+@media screen and (max-width: 960px) {
+  .benefits {
+    margin-bottom: 65px;
+
+    &_card {
+      margin-bottom: 60px;
+    }
+
+    &_cards {
+      padding: 0 15px;
+      grid-column-gap: 35px;
+    }
+
+    &_title {
+      padding: 55px 15px;
+    }
+
+    &_wrap {
+      box-shadow: none;
+    }
+  }
+
+
+  .search_form_field {
+    margin-bottom: 25px;
+  }
+
+  .places_card_size_large {
+    grid-column: span 6;
+  }
+
+  .places_card_size_small {
+    grid-column: span 6;
+  }
+
+  .tours {
+    &_tour {
+      grid-column-gap: 35px;
+
+      &_info {
+        padding-left: 0;
+      }
+
+      &_title {
+        margin-bottom: 15px;
+      }
+
+      &_desc {
+        margin-bottom: 15px;
+      }
+    }
+
+
+  }
+
+  .top_cards {
+    grid-column-gap: 25px;
+    grid-row-gap: 50px;
+
+    &_card {
+      grid-column: span 3;
+
+      &_picture {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .footer {
+    padding: 60px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .section_title {
+    margin-bottom: 25px;
+  }
+  .section_title::after {
+    width: 78px;
+  }
+
+
+  .header {
+    &_burger {
+      display: block;
+    }
+
+    &_wrapper {
+      padding-top: 28px;
+    }
+
+    &_nav {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: black;
+      z-index: 10;
+      padding: 75px;
+      transform: translateX(100%);
+      transition: 0.2s all linear;
+
+      &_active {
+        transform: translateX(0);
+      }
+
+      &_item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    &_item:last-child {
+      margin-bottom: 0;
+    }
+
+    &_link {
+      font-size: 42px;
+      line-height: 48px;
+    }
+
+    &_nav_close {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 11;
+
+      &_line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+      }
+
+      &_line:first-child {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &_line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+
+  .intro {
+    padding-top: 120px;
+
+    &_title {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    &_subtitle {
+      font-size: 14px;
+    }
+  }
+
+
+  .search_form_field {
+    margin-right: 0;
+    width: 100%;
+    padding-bottom: 12px;
+    background: transparent url(../../img/svg/Oval.svg) no-repeat left 2px;
+  }
+
+  .search_form_field::placeholder {
+    font-size: 16px;
+  }
+  .search_form_submit {
+    width: 100%;
+  }
+
+
+  .benefits {
+    margin-bottom: 36px;
+
+    &_card {
+      grid-column: span 3;
+      margin-bottom: 40px;
+
+      &_ico {
+        margin-bottom: 20px;
+      }
+
+      &_desc {
+        margin-bottom: 20px;
+      }
+    }
+
+    &_title {
+      margin-bottom: 12px;
+    }
+  }
+
+
+  .places_view_all {
+    margin-bottom: 24px;
+  }
+
+  .places_caption {
+    margin-bottom: 0;
+  }
+
+  .places_card_picture_size_large,
+  .places_card_picture_size_small {
+    height: 230px;
+  }
+
+  .places {
+    margin-bottom: 76px;
+  }
+
+
+  .tour_picture_mobile_first {
+    grid-row-start: -1;
+  }
+
+
+  .tours {
+    margin-bottom: 76px;
+
+    &_tour {
+      margin-bottom: 50px;
+
+      &_picture {
+        margin-bottom: 12px;
+        grid-column: span 2;
+      }
+
+      &_info {
+        grid-column: span 2;
+      }
+    }
+  }
+
+
+  .top {
+    margin-bottom: 76px;
+
+    &_card {
+      grid-column: span 6;
+
+      &_desc {
+        margin-bottom: 15px;
+      }
+
+      &_stats {
+        max-width: 386px;
+      }
+    }
+
+  }
+
+  .footer_logo {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer_nav {
+    width: 100%;
+  }
+
+  .footer_menu {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header_nav {
+    padding: 75px 30px;
+  }
+}
+
+
+
+

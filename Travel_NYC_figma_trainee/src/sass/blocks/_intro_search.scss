@@ -1,0 +1,44 @@
+.search_form {
+  &_info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_field {
+    width: 297px;
+    background: transparent url(../../img/svg/Oval.svg) no-repeat left 6px;
+    background-size: 20px;
+    border: 0;
+    border-bottom: 2px solid #BFC0C5;
+    margin-right: 60px;
+    padding-left: 40px;
+    padding-bottom: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+  }
+
+  &_field::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+  }
+
+  &_submit {
+    padding: 15px 39px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    background: transparent;
+    border: 0;
+    border-radius: 5px;
+    transition: linear .4s;
+  }
+
+  &_submit:hover, _submit:focus, _submit:active {
+    background-color: #bfc0c5;
+
+
+  }
+}

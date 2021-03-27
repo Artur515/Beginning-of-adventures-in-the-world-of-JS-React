@@ -1,0 +1,27 @@
+.intro {
+  min-height: 100vh;
+  background: url(../../img/bridge-336475_1920.jpg) no-repeat center;
+  background-size: cover;
+  padding-top: 263px;
+  padding-bottom: 223px;
+
+  &_title {
+    max-width: 619px;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    margin-bottom: 22px;
+  }
+
+  &_subtitle {
+    max-width: 546px;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 59px;
+  }
+}
+
+
+

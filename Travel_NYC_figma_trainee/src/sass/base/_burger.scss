@@ -1,0 +1,21 @@
+.burger_line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+
+  &_first {
+    top: 0;
+  }
+
+  &_second {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &_third {
+    bottom: 0;
+  }
+}

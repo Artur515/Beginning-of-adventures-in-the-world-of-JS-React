@@ -1,0 +1,90 @@
+.top {
+  margin-bottom: 86px;
+
+  &_cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 57px;
+    grid-row-gap: 57px;
+  }
+
+  &_card {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+
+    &_picture {
+      position: relative;
+      margin-bottom: 45px;
+      height: 100%;
+    }
+
+    &_stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(21, 24, 36, 0.6);
+      padding: 16px 25px;
+    }
+
+    &_title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: #fff;
+      margin: 0 auto 0 0;
+    }
+
+    &_likes {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: white;
+      padding-right: 20px;
+      background: url(../../img/svg/heart.svg) no-repeat right;
+      background-size: 16px;
+      margin-right: 14px;
+    }
+
+    &_comments {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: white;
+      padding-right: 23px;
+      background: url(../../img/svg/comment.svg) no-repeat right;
+    }
+
+    &_desc {
+      margin-bottom: 31px;
+    }
+
+    &_more {
+      width: 118px;
+      padding: 12px 19px;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      background: transparent;
+      margin: auto 0 0 0;
+      transition: linear 0.4s;
+    }
+
+    &_more:hover, &_more:focus, &_more:active {
+      background: darkgray;
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+  &_title {
+    margin-bottom: 54px
+  }
+
+
+}

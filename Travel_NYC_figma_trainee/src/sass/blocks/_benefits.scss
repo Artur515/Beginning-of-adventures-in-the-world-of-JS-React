@@ -1,0 +1,67 @@
+.benefits {
+  margin-bottom: 131px;
+
+  &_wrap {
+    max-width: 1262px;
+    background-color: white;
+    margin: 0 auto;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    position: relative;
+  }
+
+  &_title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    padding: 93px 100px 88px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: white;
+  }
+
+  &_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 55px;
+    padding: 0 100px;
+  }
+
+  &_card {
+    grid-column: span 1;
+    margin-bottom: 112px;
+
+    &_title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 26px;
+    }
+
+    &_desc {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 39px;
+    }
+
+    &_more {
+      display: inline-block;
+      padding-right: 59px;
+      font-size: 16px;
+      line-height: 24px;
+      color: grey;
+      text-decoration: none;
+      background: url(../../img/svg/Shape.svg) no-repeat 95% center;
+      transition: .2s all;
+    }
+
+    &_more:hover, _more:focus {
+      background: url(../../img/svg/Shape.svg) no-repeat right center;
+      color: black;
+      text-decoration: none;
+    }
+
+  }
+}
